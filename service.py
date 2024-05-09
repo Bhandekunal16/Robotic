@@ -123,3 +123,7 @@ class service :
     def fans():
         data = psutil.sensors_fans()
         print(data)
+        
+    def user():
+        data = psutil.users()
+        print(data)

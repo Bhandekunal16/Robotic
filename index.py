@@ -72,5 +72,7 @@ def application():
             service.battery()
         elif task == 'fans':
             service.fans()
+        elif task == 'users':
+            service.user()
 
 application()
