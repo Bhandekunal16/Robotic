@@ -56,5 +56,15 @@ def application():
             service.temperature()
         elif task == 'boot':
             service.bootTime()
+        elif task == 'unknown':
+            service.getloadavg()
+        elif task == 'net':
+            service.net_connections()
+        elif task == 'address':
+            service.address()
+        elif task == 'stats':
+            service.stats()
+        elif task == 'counter':
+            service.counters()
 
 application()

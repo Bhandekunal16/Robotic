@@ -92,3 +92,22 @@ class service :
         data = psutil.boot_time()
         print(data)
         
+    def getloadavg():
+        data = psutil.getloadavg()
+        print(data)
+        
+    def net_connections():
+        data = psutil.net_connections()
+        print(data)
+        
+    def address():
+        data = psutil.net_if_addrs()
+        print(data)
+    
+    def stats():
+        data = psutil.net_if_stats()
+        print (data)
+        
+    def counters():
+        data = psutil.net_io_counters()
+        print(data)
