@@ -78,3 +78,13 @@ class service :
     def list(name):
         contents = os.listdir(name)
         print(contents)
+        
+            
+    def temperature():
+        temperatures = psutil.sensors_temperatures()
+        if temperatures:
+            print("CPU Temperatures:")
+        for name, entries in temperatures.items():
+            for entry in entries:
+                print(f"{name}: {entry.current}°C")
+        

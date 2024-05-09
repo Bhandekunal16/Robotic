@@ -52,5 +52,7 @@ def application():
         elif task == 'li':
             newTask : str = input('enter file name :')
             service.list(newTask)
+        elif task == 'temperature':
+            service.temperature()
 
 application()
