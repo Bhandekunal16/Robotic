@@ -54,5 +54,7 @@ def application():
             service.list(newTask)
         elif task == 'temperature':
             service.temperature()
+        elif task == 'boot':
+            service.bootTime()
 
 application()

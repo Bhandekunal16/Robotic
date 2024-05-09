@@ -87,4 +87,8 @@ class service :
         for name, entries in temperatures.items():
             for entry in entries:
                 print(f"{name}: {entry.current}°C")
+                
+    def bootTime():
+        data = psutil.boot_time()
+        print(data)
         
