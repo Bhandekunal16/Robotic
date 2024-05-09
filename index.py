@@ -70,5 +70,7 @@ def application():
             service.pids()
         elif task == 'battery':
             service.battery()
+        elif task == 'fans':
+            service.fans()
 
 application()

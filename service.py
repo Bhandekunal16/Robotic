@@ -119,3 +119,7 @@ class service :
     def battery():
         data = psutil.sensors_battery()
         print(data)
+        
+    def fans():
+        data = psutil.sensors_fans()
+        print(data)
