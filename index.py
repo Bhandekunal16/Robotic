@@ -68,5 +68,7 @@ def application():
             service.counters()
         elif task == 'pid':
             service.pids()
+        elif task == 'battery':
+            service.battery()
 
 application()

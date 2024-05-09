@@ -115,3 +115,7 @@ class service :
     def pids():
         data = psutil.pids()
         print(data)
+        
+    def battery():
+        data = psutil.sensors_battery()
+        print(data)
