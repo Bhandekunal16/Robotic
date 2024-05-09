@@ -66,5 +66,7 @@ def application():
             service.stats()
         elif task == 'counter':
             service.counters()
+        elif task == 'pid':
+            service.pids()
 
 application()

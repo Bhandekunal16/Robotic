@@ -111,3 +111,7 @@ class service :
     def counters():
         data = psutil.net_io_counters()
         print(data)
+        
+    def pids():
+        data = psutil.pids()
+        print(data)
