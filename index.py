@@ -93,7 +93,7 @@ def tasks():
             print(Color.MAGENTA + '************************************************************************' + Color.CYAN)
             current_file_path = os.path.dirname(os.path.abspath(__file__))
             os.environ['PATH'] += os.pathsep + current_file_path
-            task = input( f'Welcome to the mystical castle of {os.getcwd()}. What would you like to explore today?:\n' + Color.RESET)
+            task = input(Color.YELLOW + f'Welcome to the mystical castle of{Color.CYAN } {os.getcwd()}.{Color.YELLOW }What would you like to explore today?:\n' + Color.RESET)
             if 'cd' in task:
                 service.cd(task)
                 result = application(task)
