@@ -1,17 +1,30 @@
 import os, time, psutil, shutil
 
 class service :
+    
     def write(name):
+        """this is writing method.
+        Args:
+            name (str): name of the file
+        """
         with open(name, 'w') as file:
             file.write('//Hello, world!\n')
             file.write('//This is a new file created using Python.')
 
     def read(name):
+        """this is read method.
+        Args:
+            name (str): name of the file
+        """
         with open(name, 'r') as file:
             contents = file.read()
             print(contents)
 
     def lineRead(name):
+        """this is read method.
+        Args:
+            name (str): name of the file
+        """
         with open(name, 'r') as file:
             for line in file:
                 print(line.strip())
