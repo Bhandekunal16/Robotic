@@ -86,6 +86,8 @@ def application():
         case 'node c':
             newTask : str = input('enter file name :')
             service.node(newTask)
+        case 'permission':
+            service.permission()
 
 def tasks():
     try :

@@ -1,4 +1,5 @@
 import os, time, psutil, shutil, subprocess
+from color import Color
 
 class service :
     
@@ -141,7 +142,7 @@ class service :
             name (str): The name of the directory to list.
         """
         contents = os.listdir(name)
-        print(', '.join(contents))
+        print(Color.GREEN + ', '.join(contents))
         
             
     def temperature():
@@ -211,3 +212,11 @@ class service :
         print("Compilation successful!")
         print("Output:")
         print(data.stdout)
+        
+    def permission():
+        path = os.getcwd()
+        per= os.stat(path)
+        code = str(per.st_mode)
+        if code.find('689'):
+            print('permission found : read,write')
+        print(per.st_mode)
