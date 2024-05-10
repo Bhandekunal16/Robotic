@@ -189,15 +189,14 @@ class service :
     def user():
         """Prints information about active users."""
         data = psutil.users()
-        print(data)
+        obj = {'name' : data[0].name, 'host': data[0].host, 'terminal' : data[0].terminal}
+        print(obj)
         
     def clear():
         os.system('cls' if os.name == 'nt' else 'clear')
 
     def node(name):
         data = subprocess.run(['node', name], capture_output=True, text=True)
-        print("Compilation successful!")
-        print("Output:")
         print(data.stdout)
         
     def permission():

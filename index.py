@@ -83,8 +83,8 @@ def application(task):
             service.permission()
         case 'python --v':
             service.version()
-        case 'version':
-            newTask : str = input('enter file name :')
+        case 'task':
+            newTask : str = input('enter the task :')
             service.versions(newTask)
 
 def tasks():
