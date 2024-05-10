@@ -8,7 +8,7 @@ def application():
     """
     current_file_path = os.path.dirname(os.path.abspath(__file__))
     os.environ['PATH'] += os.pathsep + current_file_path
-    task = input( Color.GREEN + f'{current_file_path}$: ' + Color.RESET)
+    task = input( f'Welcome to the mystical castle of {os.getcwd()}. What would you like to explore today?:\n' + Color.RESET)
 
     match task :
         case 'write':
