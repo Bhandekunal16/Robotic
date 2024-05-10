@@ -78,9 +78,6 @@ def application():
             service.fans()
         case  'users':
             service.user()
-            
-
-# application()
 
 def tasks():
     while True:
