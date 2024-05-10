@@ -1,4 +1,4 @@
-import os, time, psutil, shutil, subprocess
+import os, time, psutil, shutil, subprocess, sys
 from color import Color
 
 class service :
@@ -220,3 +220,8 @@ class service :
         if code.find('689'):
             print('permission found : read,write')
         print(per.st_mode)
+        
+    def version():
+        current_version = sys.version_info
+        if current_version >= (3, 8):
+            print(f"Version {current_version.major}.{current_version.minor}.{current_version.micro}")

@@ -2,6 +2,7 @@ from service import service
 from color import Color
 import os
 
+
 def application():
     """
     application that sort the os function according your choice and do your work
@@ -43,7 +44,6 @@ def application():
         case  'cpu':
             service.cpu()
         case  'exit':
-            print('exit')
             return 'exit'
         case  'copy':
             newTask : str = input('enter file name :')
@@ -88,6 +88,8 @@ def application():
             service.node(newTask)
         case 'permission':
             service.permission()
+        case 'python --v':
+            service.version()
 
 def tasks():
     try :
