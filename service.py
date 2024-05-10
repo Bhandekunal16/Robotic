@@ -231,6 +231,7 @@ class service :
         lab = command[0]
         v = command[1]
         data = subprocess.run([lab, v], capture_output=True, text=True)
+        print(data)
         print(data.stdout)
 
         
