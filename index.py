@@ -13,7 +13,7 @@ def application():
             service.read(newTask)
         case 'readline':
             newTask : str = input('enter file name :')
-            service.read(newTask)
+            service.lineRead(newTask)
         case  'edit':
             newTask : str = input('enter file name :')
             content : str = input('enter content :')
