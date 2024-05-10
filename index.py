@@ -79,4 +79,12 @@ def application():
             service.user()
             
 
-application()
+# application()
+
+def tasks():
+    while True:
+        application()
+        if 'exit' in input('enter command : '):
+            break
+        
+tasks()
