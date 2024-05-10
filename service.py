@@ -78,19 +78,6 @@ class service :
             print(Color.GREEN + "Folder removed successfully.")
         except OSError as e:
             print(f"Error: {name} : {e.strerror}")
-            
-    def cd(name):
-        """Changes the current working directory.
-
-        Args:
-            name (str): The path to the new working directory.
-        """
-        try:
-            os.chdir(name)
-            print("Current working directory changed to:", os.getcwd())
-        except OSError as e:
-            print(f"Error: {e.strerror}")
-            
     def long_running_task():
         """Simulates a long-running task by printing progress messages."""
         for i in range(10):
@@ -232,6 +219,21 @@ class service :
         v = command[1]
         data = subprocess.run([lab, v], capture_output=True, text=True)
         print(data.stdout)
+        
+    def cd(name):
+        """Changes the current working directory.
+
+        Args:
+            name (str): The path to the new working directory.
+        """
+        try:
+            command = name.split()
+            lab = command[0]
+            v = command[1]
+            os.chdir(v)
+            print("Current working directory changed to:", os.getcwd())
+        except OSError as e:
+            print(f"Error: {e.strerror}")
         
 
         

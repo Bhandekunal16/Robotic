@@ -3,14 +3,10 @@ from color import Color
 import os
 
 
-def application():
+def application(task):
     """
     application that sort the os function according your choice and do your work
     """
-    current_file_path = os.path.dirname(os.path.abspath(__file__))
-    os.environ['PATH'] += os.pathsep + current_file_path
-    task = input( f'Welcome to the mystical castle of {os.getcwd()}. What would you like to explore today?:\n' + Color.RESET)
-
     match task :
         case 'write':
             newTask : str = input('enter file name :')
@@ -34,9 +30,6 @@ def application():
         case  'rmdir':
             newTask : str = input('enter folder name :')
             service.rmdir(newTask)
-        case  'cd':
-            newTask : str = input('enter folder name :')
-            service.cd(newTask)
         case  'simulate':
             service.long_running_task()
         case  'memory':
@@ -98,10 +91,17 @@ def tasks():
     try :
         while True:
             print(Color.MAGENTA + '************************************************************************' + Color.CYAN)
-            result = application()
-            if result == 'exit':
-                print(Color.MAGENTA + '********** thank you! ***********')
-                break
+            current_file_path = os.path.dirname(os.path.abspath(__file__))
+            os.environ['PATH'] += os.pathsep + current_file_path
+            task = input( f'Welcome to the mystical castle of {os.getcwd()}. What would you like to explore today?:\n' + Color.RESET)
+            if 'cd' in task:
+                service.cd(task)
+                result = application(task)
+            else:
+                result = application(task)
+                if result == 'exit':
+                    print(Color.MAGENTA + '********** thank you! ***********')
+                    break
     except OSError as e:
             print(Color.RED + f"Error: {e.strerror}")
             tasks()
