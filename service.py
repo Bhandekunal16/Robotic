@@ -207,4 +207,5 @@ class service :
         os.system('cls' if os.name == 'nt' else 'clear')
 
     def node(name):
-        subprocess.run(['node', name], capture_output=True, text=True)
+        data = subprocess.run(['node', name], capture_output=True, text=True)
+        print(data.stdout)
