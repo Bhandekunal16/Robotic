@@ -40,7 +40,8 @@ def application():
         case  'cpu':
             service.cpu()
         case  'exit':
-            'exit'
+            print('exit')
+            return 'exit'
         case  'copy':
             newTask : str = input('enter file name :')
             newTask2 : str = input('enter destination for the file :')
@@ -83,6 +84,9 @@ def application():
 
 def tasks():
     while True:
-        application()
+        result = application()
+        print(result == 'exit')
+        if result == 'exit':
+            break
         
 tasks()
