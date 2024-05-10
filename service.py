@@ -208,4 +208,6 @@ class service :
 
     def node(name):
         data = subprocess.run(['node', name], capture_output=True, text=True)
+        print("Compilation successful!")
+        print("Output:")
         print(data.stdout)
