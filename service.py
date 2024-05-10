@@ -63,7 +63,7 @@ class service :
         """
         try:
             os.remove(name)
-            print("File removed successfully.")
+            print(Color.GREEN + "File removed successfully.")
         except OSError as e:
             print(f"Error: {name} : {e.strerror}")
             
@@ -75,7 +75,7 @@ class service :
         """
         try:
             os.rmdir(name)
-            print("Folder removed successfully.")
+            print(Color.GREEN + "Folder removed successfully.")
         except OSError as e:
             print(f"Error: {name} : {e.strerror}")
             
