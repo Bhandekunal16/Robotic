@@ -81,6 +81,8 @@ def application():
             service.fans()
         case  'users':
             service.user()
+        case 'clear':
+            service.clear()
 
 def tasks():
     try :

@@ -202,3 +202,6 @@ class service :
         """Prints information about active users."""
         data = psutil.users()
         print(data)
+        
+    def clear():
+        os.system('cls' if os.name == 'nt' else 'clear')
