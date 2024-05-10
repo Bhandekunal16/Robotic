@@ -225,3 +225,12 @@ class service :
         current_version = sys.version_info
         if current_version >= (3, 8):
             print(f"Version {current_version.major}.{current_version.minor}.{current_version.micro}")
+        
+    def versions(name):
+        command = name.split()
+        lab = command[0]
+        v = command[1]
+        data = subprocess.run([lab, v], capture_output=True, text=True)
+        print(data.stdout)
+
+        

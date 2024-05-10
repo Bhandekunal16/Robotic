@@ -90,6 +90,9 @@ def application():
             service.permission()
         case 'python --v':
             service.version()
+        case 'version':
+            newTask : str = input('enter file name :')
+            service.versions(newTask)
 
 def tasks():
     try :
