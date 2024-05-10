@@ -87,7 +87,7 @@ def application():
 def tasks():
     try :
         while True:
-            print(Color.CYAN + '*************************')
+            print(Color.MAGENTA + '*************************' + Color.CYAN)
             result = application()
             if result == 'exit':
                 print(Color.MAGENTA + '********** thank you! ***********')
