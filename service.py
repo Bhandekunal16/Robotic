@@ -1,7 +1,4 @@
-import os
-import time
-import psutil
-import shutil
+import os, time, psutil, shutil
 
 class service :
     def write(name):
