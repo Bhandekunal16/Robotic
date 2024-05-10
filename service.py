@@ -1,4 +1,4 @@
-import os, time, psutil, shutil
+import os, time, psutil, shutil, subprocess
 
 class service :
     
@@ -205,3 +205,6 @@ class service :
         
     def clear():
         os.system('cls' if os.name == 'nt' else 'clear')
+
+    def node(name):
+        subprocess.run(['node', name], capture_output=True, text=True)

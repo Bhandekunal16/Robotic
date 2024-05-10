@@ -83,6 +83,9 @@ def application():
             service.user()
         case 'clear':
             service.clear()
+        case 'node c':
+            newTask : str = input('enter file name :')
+            service.node(newTask)
 
 def tasks():
     try :
