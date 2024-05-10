@@ -93,7 +93,7 @@ def tasks():
                 print(Color.MAGENTA + '********** thank you! ***********')
                 break
     except OSError as e:
-            print(f"Error: {e.strerror}")
+            print(Color.RED + f"Error: {e.strerror}")
             tasks()
         
 tasks()
