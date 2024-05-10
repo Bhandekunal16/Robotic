@@ -5,7 +5,9 @@ def application():
     """
     application that sort the os function according your choice and do your work
     """
-    current_file_path : str = os.path.abspath(__file__)
+    current_file_path : str = os.path.dirname(os.path.abspath(__file__))
+    print(current_file_path)
+    os.environ['PATH'] += os.pathsep + current_file_path
     task : str = input(f'{current_file_path}$:')
     match task :
         case 'write':
