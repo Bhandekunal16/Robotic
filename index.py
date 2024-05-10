@@ -1,78 +1,79 @@
 from service import service
 import os
 
-
 def application():
-        current_file_path = os.path.abspath(__file__)
-        task : str = input(f'{current_file_path}$:')
-        if task == 'write':
+    current_file_path = os.path.abspath(__file__)
+    task : str = input(f'{current_file_path}$:')
+    match task :
+        case 'write':
             newTask : str = input('enter file name :')
             service.write(newTask)
-        elif task == 'read':
+        case 'read' :
             newTask : str = input('enter file name :')
             service.read(newTask)
-        elif task == 'readline':
+        case 'readline':
             newTask : str = input('enter file name :')
             service.read(newTask)
-        elif task == 'edit':
+        case  'edit':
             newTask : str = input('enter file name :')
             content : str = input('enter content :')
             service.edit(newTask, content)
-        elif task == 'mkdir':
+        case  'mkdir':
             newTask : str = input('enter folder name :')
             service.mkdir(newTask)
-        elif task == 'remove':
+        case  'remove':
             newTask : str = input('enter folder name :')
             service.remove(newTask)
-        elif task == 'rmdir':
+        case  'rmdir':
             newTask : str = input('enter folder name :')
             service.rmdir(newTask)
-        elif task == 'cd':
+        case  'cd':
             newTask : str = input('enter folder name :')
             service.cd(newTask)
-        elif task == 'simulate':
+        case  'simulate':
             service.long_running_task()
-        elif task == 'memory':
+        case  'memory':
             service.memory()
-        elif task == 'cpu':
+        case  'cpu':
             service.cpu()
-        elif task == 'exit':
+        case  'exit':
             'exit'
-        elif task == 'copy':
+        case  'copy':
             newTask : str = input('enter file name :')
             newTask2 : str = input('enter destination for the file :')
             service.copy(newTask, newTask2 )
-        elif task == 'rename':
+        case  'rename':
             newTask : str = input('enter old file name :')
             newTask2 : str = input('enter new file name :')
             service.copy(newTask, newTask2 )
-        elif task == 'chmod':
+        case  'chmod':
             newTask : str = input('enter file name :')
             service.chmod(newTask)
-        elif task == 'li':
+        case  'li':
             newTask : str = input('enter file name :')
             service.list(newTask)
-        elif task == 'temperature':
+        case  'temperature':
             service.temperature()
-        elif task == 'boot':
+        case  'boot':
             service.bootTime()
-        elif task == 'unknown':
+        case  'unknown':
             service.getloadavg()
-        elif task == 'net':
+        case  'net':
             service.net_connections()
-        elif task == 'address':
+        case  'address':
             service.address()
-        elif task == 'stats':
+        case  'stats':
             service.stats()
-        elif task == 'counter':
+        case  'counter':
             service.counters()
-        elif task == 'pid':
+        case  'pid':
             service.pids()
-        elif task == 'battery':
+        case  'battery':
             service.battery()
-        elif task == 'fans':
+        case  'fans':
             service.fans()
-        elif task == 'users':
+        case  'users':
             service.user()
+            
 
 application()
