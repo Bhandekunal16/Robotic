@@ -80,10 +80,15 @@ def application():
             service.user()
 
 def tasks():
-    while True:
-        result = application()
-        print(result == 'exit')
-        if result == 'exit':
-            break
+    try :
+        while True:
+            print('*************************')
+            result = application()
+            if result == 'exit':
+                print('********** thank you! ***********')
+                break
+    except OSError as e:
+            print(f"Error: {e.strerror}")
+            tasks()
         
 tasks()
