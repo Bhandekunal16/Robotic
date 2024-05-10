@@ -11,9 +11,6 @@ def application():
     os.environ['PATH'] += os.pathsep + current_file_path
     task = input( f'Welcome to the mystical castle of {os.getcwd()}. What would you like to explore today?:\n' + Color.RESET)
 
-    if task.find('cd'):
-        print('hello')
-
     match task :
         case 'write':
             newTask : str = input('enter file name :')
