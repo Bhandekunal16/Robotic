@@ -1,14 +1,15 @@
 from service import service
+from color import Color
 import os
 
 def application():
     """
     application that sort the os function according your choice and do your work
     """
-    current_file_path : str = os.path.dirname(os.path.abspath(__file__))
-    print(current_file_path)
+    current_file_path = os.path.dirname(os.path.abspath(__file__))
     os.environ['PATH'] += os.pathsep + current_file_path
-    task : str = input(f'{current_file_path}$:')
+    task = input( Color.GREEN + f'{current_file_path}$: ' + Color.RESET)
+
     match task :
         case 'write':
             newTask : str = input('enter file name :')
@@ -55,9 +56,9 @@ def application():
         case  'chmod':
             newTask : str = input('enter file name :')
             service.chmod(newTask)
-        case  'li':
-            newTask : str = input('enter file name :')
-            service.list(newTask)
+        case  'ls':
+            current_dir = current_dir = os.getcwd()
+            service.list(current_dir)
         case  'temperature':
             service.temperature()
         case  'boot':
@@ -84,10 +85,10 @@ def application():
 def tasks():
     try :
         while True:
-            print('*************************')
+            print(Color.MAGENTA + '*************************')
             result = application()
             if result == 'exit':
-                print('********** thank you! ***********')
+                print(Color.MAGENTA + '********** thank you! ***********')
                 break
     except OSError as e:
             print(f"Error: {e.strerror}")
