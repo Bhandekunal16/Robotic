@@ -141,7 +141,7 @@ class service :
             name (str): The name of the directory to list.
         """
         contents = os.listdir(name)
-        print(contents)
+        print(', '.join(contents))
         
             
     def temperature():
