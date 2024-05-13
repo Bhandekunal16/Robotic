@@ -2,117 +2,125 @@ from service import service
 from color import Color
 import os
 
-class module :
+
+class module:
     def application(task):
         """
         application that sort the os function according your choice and do your work
         """
-        match task :
-            case 'write':
-                newTask : str = input('enter file name :')
+        match task:
+            case "write":
+                newTask: str = input("enter file name :")
                 service.write(newTask)
-            case 'read' :
-                newTask : str = input('enter file name :')
+            case "read":
+                newTask: str = input("enter file name :")
                 service.read(newTask)
-            case 'readline':
-                newTask : str = input('enter file name :')
+            case "readline":
+                newTask: str = input("enter file name :")
                 service.lineRead(newTask)
-            case  'edit':
-                newTask : str = input('enter file name :')
-                content : str = input('enter content :')
+            case "edit":
+                newTask: str = input("enter file name :")
+                content: str = input("enter content :")
                 service.edit(newTask, content)
-            case  'mkdir':
-                newTask : str = input('enter folder name :')
+            case "mkdir":
+                newTask: str = input("enter folder name :")
                 service.mkdir(newTask)
-            case  'remove':
-                newTask : str = input('enter folder name :')
+            case "remove":
+                newTask: str = input("enter folder name :")
                 service.remove(newTask)
-            case  'rmdir':
-                newTask : str = input('enter folder name :')
+            case "rmdir":
+                newTask: str = input("enter folder name :")
                 service.rmdir(newTask)
-            case  'simulate':
+            case "simulate":
                 service.long_running_task()
-            case  'memory':
+            case "memory":
                 service.memory()
-            case  'cpu':
+            case "cpu":
                 service.cpu()
-            case  'exit':
-                return 'exit'
-            case  'copy':
-                newTask : str = input('enter file name :')
-                newTask2 : str = input('enter destination for the file :')
-                service.copy(newTask, newTask2 )
-            case  'rename':
-                newTask : str = input('enter old file name :')
-                newTask2 : str = input('enter new file name :')
-                service.copy(newTask, newTask2 )
-            case  'chmod':
-                newTask : str = input('enter file name :')
+            case "exit":
+                return "exit"
+            case "copy":
+                newTask: str = input("enter file name :")
+                newTask2: str = input("enter destination for the file :")
+                service.copy(newTask, newTask2)
+            case "rename":
+                newTask: str = input("enter old file name :")
+                newTask2: str = input("enter new file name :")
+                service.copy(newTask, newTask2)
+            case "chmod":
+                newTask: str = input("enter file name :")
                 service.chmod(newTask)
-            case  'ls':
+            case "ls":
                 current_dir = current_dir = os.getcwd()
                 service.list(current_dir)
-            case  'temperature':
+            case "temperature":
                 service.temperature()
-            case  'boot':
+            case "boot":
                 service.bootTime()
-            case  'unknown':
+            case "unknown":
                 service.getloadavg()
-            case  'net':
+            case "net":
                 service.net_connections()
-            case  'address':
+            case "address":
                 service.address()
-            case  'stats':
+            case "stats":
                 service.stats()
-            case  'counter':
+            case "counter":
                 service.counters()
-            case  'pid':
+            case "pid":
                 service.pids()
-            case  'battery':
+            case "battery":
                 service.battery()
-            case  'fans':
+            case "fans":
                 service.fans()
-            case  'users':
+            case "users":
                 service.user()
-            case 'clear':
+            case "clear":
                 service.clear()
-            case 'node c':
-                newTask : str = input('enter file name :')
+            case "node c":
+                newTask: str = input("enter file name :")
                 service.node(newTask)
-            case 'permission':
+            case "permission":
                 service.permission()
-            case 'python --v':
+            case "python --v":
                 service.version()
-            case 'task':
-                newTask : str = input('enter the task :')
+            case "task":
+                newTask: str = input("enter the task :")
                 service.versions(newTask)
-                
-            case 'shutdown':
+
+            case "shutdown":
                 service.shutdown()
-                
-            case 'restart':
+
+            case "restart":
                 service.restart()
-                
-            
 
 
 def tasks():
-    try :
+    try:
         while True:
-            print(Color.MAGENTA + '************************************************************************' + Color.CYAN)
+            print(
+                Color.MAGENTA
+                + "************************************************************************"
+                + Color.CYAN
+            )
             current_file_path = os.path.dirname(os.path.abspath(__file__))
-            os.environ['PATH'] += os.pathsep + current_file_path
-            task = input(Color.YELLOW + f'Welcome to the mystical castle of{Color.CYAN } {os.getcwd()}.{Color.YELLOW }What would you like to explore today?:\n' + Color.RESET)
-            if 'cd' in task:
+            os.environ["PATH"] += os.pathsep + current_file_path
+            task = input(
+                Color.YELLOW
+                + f"Welcome to the mystical castle of{Color.CYAN } {os.getcwd()}.{Color.YELLOW }What would you like to explore today?:\n"
+                + Color.RESET
+            )
+            if "cd" in task:
                 service.cd(task)
                 result = module.application(task)
             else:
                 result = module.application(task)
-                if result == 'exit':
-                    print(Color.MAGENTA + '********** thank you! ***********')
+                if result == "exit":
+                    print(Color.MAGENTA + "********** thank you! ***********")
                     break
     except OSError as e:
-            print(Color.RED + f"Error: {e.strerror}")
-            tasks()
-        
+        print(Color.RED + f"Error: {e.strerror}")
+        tasks()
+
+
 tasks()
