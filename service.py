@@ -1,4 +1,4 @@
-import os, time, psutil, shutil, subprocess, sys, struct
+import os, time, psutil, shutil, subprocess, sys, struct, binascii
 from color import Color
 
 
@@ -281,3 +281,12 @@ class service:
             binary_data = file.read()
             binary_str = "".join(f"{byte:08b}" for byte in binary_data)
             print("Binary representation of file", name, "is:", binary_str)
+            
+    def hex(data):
+        hexadecimal_str = data.encode().hex()
+        print("Hexadecimal representation of", data, "is:", hexadecimal_str)
+        
+        
+    def decodeHex(data):
+        output = bytes.fromhex(data).decode()
+        print("Hexadecimal representation of", data, "is:", output)

@@ -123,6 +123,17 @@ class module:
             case "represent":
                 newTask = input("enter the file name :")
                 service.binaryRepresentation(newTask)
+                
+            case 'hex-decimal':
+                print("what process you want?")
+                newTask = input("enter type of input data:")
+                if newTask == 'encode':
+                    newTask2 = input("enter your data :")
+                    service.hex(newTask2)
+                elif newTask == 'decode':
+                    newTask2 = input("enter your data :")
+                    service.decodeHex(newTask2)
+                    
 
 
 def tasks():
