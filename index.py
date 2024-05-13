@@ -93,33 +93,33 @@ class module:
 
             case "restart":
                 service.restart()
-                
-            case 'search':
+
+            case "search":
                 newTask: str = input("enter file name :")
-                folder : str = os.getcwd()
-                service.search(folder,newTask)
-                
-            case 'process':
+                folder: str = os.getcwd()
+                service.search(folder, newTask)
+
+            case "process":
                 service.process()
 
-            case 'random':
+            case "random":
                 newTask: int = int(input("enter length for string :"))
                 service.random(newTask)
-                
-            case 'binary':
-                print('suggested type (str, int, float)')
-                newTask = input('enter type of input data:')
-                
-                if newTask == 'str':
-                    enter = input('enter your data :')
+
+            case "binary":
+                print("suggested type (str, int, float)")
+                newTask = input("enter type of input data:")
+
+                if newTask == "str":
+                    enter = input("enter your data :")
                     service.binaryConverter(enter)
-                elif newTask == 'int':
-                    enter = int(input('enter your data :'))
+                elif newTask == "int":
+                    enter = int(input("enter your data :"))
                     service.binaryConverter(enter)
-                elif newTask == 'float':
-                    enter = float(input('enter your data :'))
+                elif newTask == "float":
+                    enter = float(input("enter your data :"))
                     service.binaryConverter(enter)
-                
+
 
 def tasks():
     try:

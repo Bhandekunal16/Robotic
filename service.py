@@ -242,7 +242,7 @@ class service:
 
     def restart():
         os.system("shutdown -r now")
-        
+
     def search(folder, filename):
         found_files = []
         for root, dirs, files in os.walk(folder):
@@ -255,23 +255,23 @@ class service:
                 print(file_path)
         else:
             print("No files found with the specified name and extension.")
-            
+
     def process():
         data = os.getpid()
         print(data)
-        
+
     def random(number):
         data = os.urandom(number)
         print(data)
-        
+
     def binaryConverter(data):
-        if type(data)== str :
-            binary_str = ''.join(format(ord(char), '08b') for char in data)
+        if type(data) == str:
+            binary_str = "".join(format(ord(char), "08b") for char in data)
             print(binary_str)
-        elif type(data)== int :
+        elif type(data) == int:
             binary_str = bin(data)
             print("Binary representation of", data, "is:", binary_str)
-        elif type(data)== float :
-            packed = struct.pack('!d', data) 
-            binary_str = ''.join(f'{x:08b}' for x in packed)
+        elif type(data) == float:
+            packed = struct.pack("!d", data)
+            binary_str = "".join(f"{x:08b}" for x in packed)
             print("Binary representation of", data, "is:", binary_str)
