@@ -2,8 +2,9 @@ from service import service
 
 class algorithm :
     def encrypt(publicKey, privateKey, data):
-        head = service.hex(publicKey)
-        tail = service.hex(privateKey)
-        body = data
+        tail = service.hex(publicKey)
+        head = service.hex(privateKey)
+        body = service.binaryConverter(data)
         print(head, body, tail)
+        print(len(tail), len(publicKey))
         return head + body + tail

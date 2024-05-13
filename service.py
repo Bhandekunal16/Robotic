@@ -268,19 +268,24 @@ class service:
         if type(data) == str:
             binary_str = "".join(format(ord(char), "08b") for char in data)
             print(binary_str)
+            return binary_str
         elif type(data) == int:
             binary_str = bin(data)
             print("Binary representation of", data, "is:", binary_str)
+            return binary_str
         elif type(data) == float:
             packed = struct.pack("!d", data)
             binary_str = "".join(f"{x:08b}" for x in packed)
             print("Binary representation of", data, "is:", binary_str)
+            return binary_str
 
     def binaryRepresentation(name):
         with open(name, "rb") as file:
             binary_data = file.read()
             binary_str = "".join(f"{byte:08b}" for byte in binary_data)
             print("Binary representation of file", name, "is:", binary_str)
+            return binary_data
+            
             
     def hex(data):
         hexadecimal_str = data.encode().hex()
