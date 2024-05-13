@@ -105,6 +105,10 @@ class module:
             case 'random':
                 newTask: int = int(input("enter length for string :"))
                 service.random(newTask)
+                
+            case 'binary':
+                newTask = input('enter your input :')
+                service.binaryConverter(newTask)
 
 def tasks():
     try:
