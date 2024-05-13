@@ -5,6 +5,4 @@ class algorithm :
         tail = service.hex(publicKey)
         head = service.hex(privateKey)
         body = service.binaryConverter(data)
-        print(head, body, tail)
-        print(len(tail), len(publicKey))
         return head + body + tail
