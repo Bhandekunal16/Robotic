@@ -148,6 +148,10 @@ class module:
                 data = input("enter you data :")
                 data = algorithm.decrypt(publicKey, privateKey, data)
                 print(data)
+                
+            case _:
+                print(f"{task}command not matched with anything")
+            
 
 
 def tasks():
