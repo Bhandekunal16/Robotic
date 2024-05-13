@@ -265,6 +265,7 @@ class service:
         print(data)
         
     def binaryConverter(data):
+        print(type(data))
         if type(data)== str :
             binary_str = ''.join(format(ord(char), '08b') for char in data)
             print(binary_str)
