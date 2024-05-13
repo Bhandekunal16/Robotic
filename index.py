@@ -107,6 +107,7 @@ class module:
                 service.random(newTask)
                 
             case 'binary':
+                print('suggested type (str, int, float)')
                 newTask = input('enter type of input data:')
                 
                 if newTask == 'str':
