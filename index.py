@@ -107,8 +107,18 @@ class module:
                 service.random(newTask)
                 
             case 'binary':
-                newTask = input('enter your input :')
-                service.binaryConverter(newTask)
+                newTask = input('enter type of input data:')
+                
+                if newTask == 'str':
+                    enter = input('enter your data :')
+                    service.binaryConverter(enter)
+                elif newTask == 'int':
+                    enter = int(input('enter your data :'))
+                    service.binaryConverter(enter)
+                elif newTask == 'float':
+                    enter = float(input('enter your data :'))
+                    service.binaryConverter(enter)
+                
 
 def tasks():
     try:
