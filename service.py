@@ -234,5 +234,12 @@ class service :
         except OSError as e:
             print(f"Error: {e.strerror}")
         
-
+        
+    def shutdown():
+        os.system("shutdown -h now")
+        
+    def restart():
+        os.system("shutdown -r now")
+        
+        
         

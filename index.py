@@ -86,6 +86,12 @@ def application(task):
         case 'task':
             newTask : str = input('enter the task :')
             service.versions(newTask)
+            
+        case 'shutdown':
+            service.shutdown()
+            
+        case 'restart':
+            service.restart()
 
 def tasks():
     try :
