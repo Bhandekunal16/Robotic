@@ -124,31 +124,30 @@ class module:
             case "represent":
                 newTask = input("enter the file name :")
                 service.binaryRepresentation(newTask)
-                
-            case 'hex-decimal':
+
+            case "hex-decimal":
                 print("what process you want?")
                 newTask = input("enter type of input data:")
-                if newTask == 'encode':
+                if newTask == "encode":
                     newTask2 = input("enter your data :")
                     service.hex(newTask2)
-                elif newTask == 'decode':
+                elif newTask == "decode":
                     newTask2 = input("enter your data :")
                     service.decodeHex(newTask2)
-                    
-            case 'encrypt':
-                publicKey = input('enter your publicKey :')
-                privateKey = 'robotic'
-                data = input('enter you data :')
-                data = algorithm.encrypt(publicKey, privateKey, data) 
+
+            case "encrypt":
+                publicKey = input("enter your publicKey :")
+                privateKey = "robotic"
+                data = input("enter you data :")
+                data = algorithm.encrypt(publicKey, privateKey, data)
                 print(data)
-                
-            case 'decrypt':
-                publicKey = input('enter your publicKey :')
-                privateKey = 'robotic'
-                data = input('enter you data :')
-                data = algorithm.decrypt(publicKey, privateKey, data) 
+
+            case "decrypt":
+                publicKey = input("enter your publicKey :")
+                privateKey = "robotic"
+                data = input("enter you data :")
+                data = algorithm.decrypt(publicKey, privateKey, data)
                 print(data)
-                    
 
 
 def tasks():
