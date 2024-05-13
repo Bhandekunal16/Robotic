@@ -1,6 +1,7 @@
 from service import service
 from color import Color
 import os
+from algorithm import algorithm
 
 
 class module:
@@ -133,6 +134,13 @@ class module:
                 elif newTask == 'decode':
                     newTask2 = input("enter your data :")
                     service.decodeHex(newTask2)
+                    
+            case 'encrypt':
+                publicKey = input('enter your publicKey :')
+                privateKey = 'robotic'
+                data = input('enter you data :')
+                data = algorithm.encrypt(publicKey, privateKey, data) 
+                print(data)
                     
 
 
