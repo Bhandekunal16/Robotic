@@ -12,22 +12,25 @@ class algorithm:
         return head + body + hashed_string
 
     def decrypt(publicKey, privateKey, data):
-        tail = service.hex(publicKey)
-        head = service.hex(privateKey)
-        hashed_string = hashlib.sha256(tail.encode()).hexdigest()
-        data
+            try :
+                tail = service.hex(publicKey)
+                head = service.hex(privateKey)
+                hashed_string = hashlib.sha256(tail.encode()).hexdigest()
+                data
 
-        modified_string = re.escape(head)
-        nextModified_string = re.escape(hashed_string)
+                modified_string = re.escape(head)
+                nextModified_string = re.escape(hashed_string)
 
-        newString = data.replace(modified_string, "")
-        nextNewString = newString.replace(nextModified_string, "")
-        
-        check = newString.replace(nextNewString, '')
-        
-        print(check == hashed_string)
-        
-        if check != hashed_string :
-            print('key not matched')
-        else : decoded_data = base64.b64decode(nextNewString.encode()).decode()
-        return decoded_data
+                newString = data.replace(modified_string, "")
+                nextNewString = newString.replace(nextModified_string, "")
+                
+                check = newString.replace(nextNewString, '')
+                
+                print(check == hashed_string)
+                
+                if check != hashed_string :
+                    print('key not matched')
+                else : decoded_data = base64.b64decode(nextNewString.encode()).decode()
+                return decoded_data
+            except OSError as e:
+                print(f"Error: {e.strerror}")
