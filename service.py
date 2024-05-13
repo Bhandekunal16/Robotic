@@ -242,3 +242,17 @@ class service:
 
     def restart():
         os.system("shutdown -r now")
+        
+    def search(folder, filename):
+        found_files = []
+        for root, dirs, files in os.walk(folder):
+            for file in files:
+                if file == filename:
+                    found_files.append(os.path.join(root, file))
+        if found_files:
+            print("Found files at this location:")
+            for file_path in found_files:
+                print(file_path)
+        else:
+            print("No files found with the specified name and extension.")
+   

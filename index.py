@@ -93,6 +93,11 @@ class module:
 
             case "restart":
                 service.restart()
+                
+            case 'search':
+                newTask: str = input("enter file name :")
+                folder : str = os.getcwd()
+                service.search(folder,newTask)
 
 
 def tasks():
