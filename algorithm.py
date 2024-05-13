@@ -13,18 +13,18 @@ class algorithm:
 
     def decrypt(publicKey, privateKey, data):
         try:
-            tail : str = service.hex(publicKey)
-            head : str = service.hex(privateKey)
+            tail: str = service.hex(publicKey)
+            head: str = service.hex(privateKey)
             hashed_string = hashlib.sha256(tail.encode()).hexdigest()
             data
 
-            modified_string : str = re.escape(head)
-            nextModified_string : str = re.escape(hashed_string)
+            modified_string: str = re.escape(head)
+            nextModified_string: str = re.escape(hashed_string)
 
-            newString : str = data.replace(modified_string, "")
-            nextNewString : str = newString.replace(nextModified_string, "")
+            newString: str = data.replace(modified_string, "")
+            nextNewString: str = newString.replace(nextModified_string, "")
 
-            check : str = newString.replace(nextNewString, "")
+            check: str = newString.replace(nextNewString, "")
 
             if check != hashed_string:
                 print("Key not matched")
