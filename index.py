@@ -98,7 +98,13 @@ class module:
                 newTask: str = input("enter file name :")
                 folder : str = os.getcwd()
                 service.search(folder,newTask)
+                
+            case 'process':
+                service.process()
 
+            case 'random':
+                newTask: int = int(input("enter length for string :"))
+                service.random(newTask)
 
 def tasks():
     try:

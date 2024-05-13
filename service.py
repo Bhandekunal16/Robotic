@@ -255,4 +255,11 @@ class service:
                 print(file_path)
         else:
             print("No files found with the specified name and extension.")
-   
+            
+    def process():
+        data = os.getpid()
+        print(data)
+        
+    def random(number):
+        data = os.urandom(number)
+        print(data)
