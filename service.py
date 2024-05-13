@@ -275,3 +275,9 @@ class service:
             packed = struct.pack("!d", data)
             binary_str = "".join(f"{x:08b}" for x in packed)
             print("Binary representation of", data, "is:", binary_str)
+            
+    def binaryRepresentation(name):
+        with open(name, "rb") as file:
+            binary_data = file.read()
+            binary_str = ''.join(f'{byte:08b}' for byte in binary_data)
+            print("Binary representation of file", name, "is:", binary_str)

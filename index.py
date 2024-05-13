@@ -119,6 +119,10 @@ class module:
                 elif newTask == "float":
                     enter = float(input("enter your data :"))
                     service.binaryConverter(enter)
+                    
+            case 'represent':
+                newTask = input("enter the file name :")
+                service.binaryRepresentation(newTask)
 
 
 def tasks():
