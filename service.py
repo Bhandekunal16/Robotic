@@ -288,10 +288,8 @@ class service:
 
     def hex(data):
         hexadecimal_str = data.encode().hex()
-        print("Hexadecimal representation of", data, "is:", hexadecimal_str)
         return hexadecimal_str
 
     def decodeHex(data):
         output = bytes.fromhex(data).decode()
-        print("Hexadecimal representation of", data, "is:", output)
         return output
