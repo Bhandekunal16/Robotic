@@ -25,9 +25,7 @@ class algorithm:
             nextNewString = newString.replace(nextModified_string, "")
 
             check = newString.replace(nextNewString, "")
-
-            print(check == hashed_string)
-
+        
             if check != hashed_string:
                 print("Key not matched")
             else:
