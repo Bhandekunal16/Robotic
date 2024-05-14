@@ -14,7 +14,8 @@ def encrypt():
     if 'publicKey' in body and 'data' in body:
         public_key = body['publicKey']
         data = body['data']
-        return algorithm.encrypt(public_key, privateKey, data)
+        response = algorithm.encrypt(public_key, privateKey, data)
+        return jsonify({'encryptedData': response}), 200
 
 
 if __name__ == '__main__':
