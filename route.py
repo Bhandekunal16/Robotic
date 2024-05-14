@@ -1,3 +1,3 @@
 class Route:
-    encrypt = "/encrypt"
-    decrypt = "/decrypt"
+    encrypt: str = "/encrypt"
+    decrypt: str = "/decrypt"
