@@ -28,18 +28,23 @@ class algorithm:
             hashed_string = hashlib.sha256(tail.encode()).hexdigest()
             data
 
-            modified_string: str = re.escape(head)
-            nextModified_string: str = re.escape(hashed_string)
-
-            newString: str = data.replace(modified_string, "")
-            nextNewString: str = newString.replace(nextModified_string, "")
-
-            check: str = newString.replace(nextNewString, "")
-
-            if check != hashed_string:
-                print("Key not matched")
+            if tail == "":
+                raise KeyError("key not found")
+            elif data == "":
+                raise KeyError("data not found")
             else:
-                decoded_data = base64.b64decode(nextNewString.encode()).decode()
+                modified_string: str = re.escape(head)
+                nextModified_string: str = re.escape(hashed_string)
+
+                newString: str = data.replace(modified_string, "")
+                nextNewString: str = newString.replace(nextModified_string, "")
+
+                check: str = newString.replace(nextNewString, "")
+
+                if check != hashed_string:
+                    print("Key not matched")
+                else:
+                    decoded_data = base64.b64decode(nextNewString.encode()).decode()
                 return decoded_data
 
         except OSError as e:
