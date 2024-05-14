@@ -89,6 +89,14 @@ class module:
                 newTask: str = input("enter the task :")
                 service.versions(newTask)
 
+            case "heavyTask":
+                newTask: str = input("enter the task :")
+                service.generate(newTask)
+
+            case "ping":
+                newTask: str = input("enter the task :")
+                service.ping(newTask)
+
             case "shutdown":
                 service.shutdown()
 
@@ -174,7 +182,7 @@ def tasks():
                 result = module.application(task)
                 if result == "exit":
                     half = "*" * 40
-                    print(Color.MAGENTA + half + 'thank you!' + half)
+                    print(Color.MAGENTA + half + "thank you!" + half)
                     break
     except OSError as e:
         print(Color.RED + f"Error: {e.strerror}")

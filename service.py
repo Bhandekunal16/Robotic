@@ -215,12 +215,30 @@ class service:
                 f"Version {current_version.major}.{current_version.minor}.{current_version.micro}"
             )
 
+    def generate(name):
+        command = name.split()
+        first = command[0]
+        sec = command[1]
+        third = command[2]
+        four = command[3]
+        data = subprocess.run([first, sec, third, four], check=True)
+        print(data.stdout)
+
     def versions(name):
         command = name.split()
         lab = command[0]
         v = command[1]
         data = subprocess.run([lab, v], capture_output=True, text=True)
         print(data.stdout)
+
+    def ping(name):
+        command = name.split()
+        ping = command[0]
+        address = command[1]
+        result = subprocess.run(
+            [ping, "-c", "4", address], capture_output=True, text=True
+        )
+        print(result.stdout)
 
     def cd(name):
         """Changes the current working directory.
