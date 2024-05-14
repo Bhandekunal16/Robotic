@@ -25,7 +25,11 @@ def decrypt():
         public_key = body['publicKey']
         data = body['data']
         response = algorithm.decrypt(public_key, privateKey, data)
-        return jsonify({'decryptedData': response}), 200
+        print(response)
+        if response == None :
+            return jsonify({'reason': f'{public_key} is matched with your public key', 'status': False}), 404
+        else :
+            return jsonify({'encryptedData': response}), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
