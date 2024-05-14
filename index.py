@@ -2,6 +2,7 @@ from service import service
 from color import Color
 import os
 from algorithm import algorithm
+from environment import environment
 
 
 class module:
@@ -145,14 +146,14 @@ class module:
 
             case "encrypt":
                 publicKey = input("enter your publicKey :")
-                privateKey = "robotic"
+                privateKey = environment.privateKey
                 data = input("enter you data :")
                 data = algorithm.encrypt(publicKey, privateKey, data)
                 print(data)
 
             case "decrypt":
                 publicKey = input("enter your publicKey :")
-                privateKey = "robotic"
+                privateKey = environment.privateKey
                 data = input("enter you data :")
                 data = algorithm.decrypt(publicKey, privateKey, data)
                 print(data)
