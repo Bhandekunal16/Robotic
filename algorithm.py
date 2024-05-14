@@ -3,7 +3,7 @@ import base64, hashlib, re
 
 
 class algorithm:
-    def encrypt(publicKey, privateKey, data):
+    def encrypt(publicKey: str, privateKey: str, data):
         tail: str = service.hex(publicKey)
         head: str = service.hex(privateKey)
         body: str = base64.b64encode(str(data).encode()).decode()
@@ -11,7 +11,7 @@ class algorithm:
         hashed_string: str = hashlib.sha256(combined_string.encode()).hexdigest()
         return head + body + hashed_string
 
-    def decrypt(publicKey, privateKey, data):
+    def decrypt(publicKey: str, privateKey: str, data):
         try:
             tail: str = service.hex(publicKey)
             head: str = service.hex(privateKey)
