@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify
 from algorithm import algorithm
+from route import Route
+from environment import environment 
 
 app = Flask(__name__)
     
@@ -7,9 +9,9 @@ app = Flask(__name__)
 def get_books():
     return 'hello world'
 
-@app.route('/encrypt', methods=['POST'])
+@app.route(Route.encrypt, methods=['POST'])
 def encrypt():
-    privateKey = "robotic"
+    privateKey = environment.privateKey
     body = request.get_json()
     if 'publicKey' in body and 'data' in body:
         public_key = body['publicKey']
@@ -17,9 +19,9 @@ def encrypt():
         response = algorithm.encrypt(public_key, privateKey, data)
         return jsonify({'encryptedData': response}), 200
 
-@app.route('/decrypt', methods=['POST'])
+@app.route(Route.decrypt, methods=['POST'])
 def decrypt():
-    privateKey = "robotic"
+    privateKey = environment.privateKey
     body = request.get_json()
     if 'publicKey' in body and 'data' in body:
         public_key = body['publicKey']
