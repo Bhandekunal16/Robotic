@@ -89,33 +89,25 @@ class module:
             case "task":
                 newTask: str = input("enter the task :")
                 service.versions(newTask)
-
             case "heavyTask":
                 newTask: str = input("enter the task :")
                 service.generate(newTask)
-
             case "ping":
                 newTask: str = input("enter the task :")
                 service.ping(newTask)
-
             case "shutdown":
                 service.shutdown()
-
             case "restart":
                 service.restart()
-
             case "search":
                 newTask: str = input("enter file name :")
                 folder: str = os.getcwd()
                 service.search(folder, newTask)
-
             case "process":
                 service.process()
-
             case "random":
                 newTask: int = int(input("enter length for string :"))
                 service.random(newTask)
-
             case "binary":
                 print("suggested type (str, int, float)")
                 newTask = input("enter type of input data:")
@@ -129,11 +121,9 @@ class module:
                 elif newTask == "float":
                     enter = float(input("enter your data :"))
                     service.binaryConverter(enter)
-
             case "represent":
                 newTask = input("enter the file name :")
                 service.binaryRepresentation(newTask)
-
             case "hex-decimal":
                 print("what process you want?")
                 newTask = input("enter type of input data:")
@@ -143,21 +133,18 @@ class module:
                 elif newTask == "decode":
                     newTask2 = input("enter your data :")
                     service.decodeHex(newTask2)
-
             case "encrypt":
                 publicKey = input("enter your publicKey :")
                 privateKey = environment.privateKey
                 data = input("enter you data :")
                 data = algorithm.encrypt(publicKey, privateKey, data)
                 print(data)
-
             case "decrypt":
                 publicKey = input("enter your publicKey :")
                 privateKey = environment.privateKey
                 data = input("enter you data :")
                 data = algorithm.decrypt(publicKey, privateKey, data)
                 print(data)
-
             case _:
                 print(f"{task} this task not matched with anything")
 
