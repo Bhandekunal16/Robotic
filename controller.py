@@ -17,6 +17,15 @@ def encrypt():
         response = algorithm.encrypt(public_key, privateKey, data)
         return jsonify({'encryptedData': response}), 200
 
+@app.route('/decrypt', methods=['POST'])
+def decrypt():
+    privateKey = "robotic"
+    body = request.get_json()
+    if 'publicKey' in body and 'data' in body:
+        public_key = body['publicKey']
+        data = body['data']
+        response = algorithm.decrypt(public_key, privateKey, data)
+        return jsonify({'decryptedData': response}), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
