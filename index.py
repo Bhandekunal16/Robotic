@@ -156,11 +156,10 @@ class module:
 def tasks():
     try:
         while True:
-            print(
-                Color.MAGENTA
-                + "************************************************************************"
-                + Color.CYAN
-            )
+            header = "*" * 90
+            print(Color.MAGENTA + header)
+            print(Color.CYAN + "Welcome to the mystical castle")
+            print(Color.MAGENTA + header)
             current_file_path = os.path.dirname(os.path.abspath(__file__))
             os.environ["PATH"] += os.pathsep + current_file_path
             task = input(
@@ -174,7 +173,8 @@ def tasks():
             else:
                 result = module.application(task)
                 if result == "exit":
-                    print(Color.MAGENTA + "********** thank you! ***********")
+                    half = "*" * 40
+                    print(Color.MAGENTA + half + 'thank you!' + half)
                     break
     except OSError as e:
         print(Color.RED + f"Error: {e.strerror}")
