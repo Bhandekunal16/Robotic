@@ -1,5 +1,6 @@
 import os, time, psutil, shutil, subprocess, sys, struct
 from color import Color
+from response import Response
 
 
 class service:
@@ -11,8 +12,7 @@ class service:
 
     def read(name):
         with open(name, "r") as file:
-            print(file.read())
-            return file.read()
+            return Response.custom(file.read())
 
     def lineRead(name):
         with open(name, "r") as file:
