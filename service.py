@@ -146,11 +146,7 @@ class service:
 
     def generate(name):
         command = name.split()
-        first = command[0]
-        sec = command[1]
-        third = command[2]
-        four = command[3]
-        data = subprocess.run([first, sec, third, four], check=True)
+        data = subprocess.run([command[0], command[1], command[2], command[3]], check=True)
         print(data.stdout)
 
     def versions(name):
