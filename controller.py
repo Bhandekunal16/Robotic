@@ -25,8 +25,7 @@ def decrypt():
     body = request.get_json()
     if "publicKey" in body and "data" in body:
         public_key = body["publicKey"]
-        data = body["data"]
-        response = algorithm.decrypt(public_key, environment.privateKey, data)
+        response = algorithm.decrypt(public_key, environment.privateKey, body["data"])
         print(response)
         if response == None:
             return Response.notfound(f"{public_key} is matched with your public key")
