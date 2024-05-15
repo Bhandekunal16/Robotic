@@ -109,7 +109,7 @@ class service:
     def user():
         data = psutil.users()
         obj = {"name": data[0].name, "host": data[0].host, "terminal": data[0].terminal}
-        print(obj)
+        Response.custom(obj)
 
     def clear():
         os.system("cls" if os.name == "nt" else "clear")
