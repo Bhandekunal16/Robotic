@@ -180,12 +180,10 @@ class service:
             print("No files found with the specified name and extension.")
 
     def process():
-        data = os.getpid()
-        print(data)
+        print(os.getpid())
 
     def random(number):
-        data = os.urandom(number)
-        print(data)
+        print(os.urandom(number))
 
     def binaryConverter(data):
         if type(data) == str:
