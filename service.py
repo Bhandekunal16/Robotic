@@ -172,9 +172,7 @@ class service:
     def cd(name):
         try:
             command = name.split()
-            lab = command[0]
-            v = command[1]
-            os.chdir(v)
+            os.chdir(command[1])
             print("Current working directory changed to:", os.getcwd())
         except OSError as e:
             print(f"Error: {e.strerror}")
