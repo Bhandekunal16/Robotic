@@ -31,7 +31,6 @@ class Response:
             404,
         )
 
-
     def custom(value):
         print(value)
         return value
