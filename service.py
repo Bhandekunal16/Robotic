@@ -80,40 +80,31 @@ class service:
                 print(f"{name}: {entry.current}°C")
 
     def bootTime():
-        data = psutil.boot_time()
-        print(data)
+        print(psutil.boot_time())
 
     def getloadavg():
-        data = psutil.getloadavg()
-        print(data)
+        print(psutil.getloadavg())
 
     def net_connections():
-        data = psutil.net_connections()
-        print(data)
+        print(psutil.net_connections())
 
     def address():
-        data = psutil.net_if_addrs()
-        print(data)
+        print(psutil.net_if_addrs())
 
     def stats():
-        data = psutil.net_if_stats()
-        print(data)
+        print(psutil.net_if_stats())
 
     def counters():
-        data = psutil.net_io_counters()
-        print(data)
+        print(psutil.net_io_counters())
 
     def pids():
-        data = psutil.pids()
-        print(data)
+        print(psutil.pids())
 
     def battery():
-        data = psutil.sensors_battery()
-        print(data)
+        print(psutil.sensors_battery())
 
     def fans():
-        data = psutil.sensors_fans()
-        print(data)
+        print(psutil.sensors_fans())
 
     def user():
         data = psutil.users()
