@@ -52,10 +52,9 @@ class service:
 
     def memory():
         mem = psutil.virtual_memory()
-        print(f"Total Memory: {mem.total} bytes")
-        print(f"Available Memory: {mem.available} bytes")
-        print(f"Used Memory: {mem.used} bytes")
-        print(f"Free Memory: {mem.free} bytes")
+        print(
+            f"Total Memory: {mem.total} bytes\n Available Memory: {mem.available} bytes\n Used Memory: {mem.used} bytes\n Free Memory: {mem.free} bytes\n"
+        )
 
     def cpu():
         print(f"CPU Usage: {psutil.cpu_percent()}%")
@@ -146,7 +145,9 @@ class service:
 
     def generate(name):
         command = name.split()
-        data = subprocess.run([command[0], command[1], command[2], command[3]], check=True)
+        data = subprocess.run(
+            [command[0], command[1], command[2], command[3]], check=True
+        )
         print(data.stdout)
 
     def versions(name):
