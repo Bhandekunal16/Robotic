@@ -1,4 +1,4 @@
-import os, time, psutil, shutil, subprocess, sys, struct, binascii
+import os, time, psutil, shutil, subprocess, sys, struct
 from color import Color
 
 
