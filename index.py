@@ -153,9 +153,9 @@ def tasks():
     try:
         while True:
             header = "*" * 90
-            print(Color.MAGENTA + header)
-            print(Color.CYAN + "Welcome to the mystical castle")
-            print(Color.MAGENTA + header)
+            print(Color.MAGENTA + header), print(
+                Color.CYAN + "Welcome to the mystical castle"
+            ), print(Color.MAGENTA + header)
             current_file_path = os.path.dirname(os.path.abspath(__file__))
             os.environ["PATH"] += os.pathsep + current_file_path
             task = input(
