@@ -162,10 +162,8 @@ class service:
 
     def ping(name):
         command = name.split()
-        ping = command[0]
-        address = command[1]
         result = subprocess.run(
-            [ping, "-c", "4", address], capture_output=True, text=True
+            [command[0], "-c", "4", command[1]], capture_output=True, text=True
         )
         print(result.stdout)
 
