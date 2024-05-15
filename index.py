@@ -152,6 +152,7 @@ class module:
 def tasks():
     try:
         while True:
+            half = "*" * 40
             header = "*" * 90
             print(Color.MAGENTA + header), print(
                 Color.CYAN + "Welcome to the mystical castle"
@@ -169,7 +170,6 @@ def tasks():
             else:
                 result = module.application(task)
                 if result == "exit":
-                    half = "*" * 40
                     print(Color.MAGENTA + half + "thank you!" + half)
                     break
     except OSError as e:
