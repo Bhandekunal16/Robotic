@@ -116,7 +116,7 @@ class service:
 
     def node(name):
         data = subprocess.run(["node", name], capture_output=True, text=True)
-        print(data.stdout)
+        Response.custom(data.stdout)
 
     def permission():
         path = os.getcwd()
