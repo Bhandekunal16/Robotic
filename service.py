@@ -23,6 +23,7 @@ class service:
         with open(name, "r") as file:
             contents = file.read()
             print(contents)
+            return contents
 
     def lineRead(name):
         """Reads the contents of a file line by line and prints them.
