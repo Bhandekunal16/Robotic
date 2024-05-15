@@ -155,9 +155,7 @@ class service:
 
     def versions(name):
         command = name.split()
-        lab = command[0]
-        v = command[1]
-        data = subprocess.run([lab, v], capture_output=True, text=True)
+        data = subprocess.run([command[0], command[1]], capture_output=True, text=True)
         print(data.stdout)
 
     def ping(name):
