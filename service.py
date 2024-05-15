@@ -11,9 +11,8 @@ class service:
 
     def read(name):
         with open(name, "r") as file:
-            contents = file.read()
-            print(contents)
-            return contents
+            print(file.read())
+            return file.read()
 
     def lineRead(name):
         with open(name, "r") as file:
