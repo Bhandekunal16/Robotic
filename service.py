@@ -240,3 +240,10 @@ class service:
     def decodeHex(data):
         output = bytes.fromhex(data).decode()
         return output
+
+    def nano(path):
+        with open(path, 'r') as file:
+            content = file.readlines()
+            edit = input(content)
+        with open(path, 'w') as file:
+            file.writelines(edit)
