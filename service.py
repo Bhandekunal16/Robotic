@@ -76,7 +76,7 @@ class service:
             if os.path.isdir(full_path):
                 print(Color.GREEN + f"{indent} {item}/")
                 nextItems = os.listdir(item)
-                print('-'*80)
+                print("-" * 80)
                 for Item in sorted(nextItems):
                     new_full_path = os.path.join(name, Item)
                     if os.path.isdir(new_full_path):
