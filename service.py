@@ -1,17 +1,30 @@
-import os, time, psutil, shutil, subprocess, sys, struct
+import os, time, psutil, shutil, subprocess, sys, struct, tempfile
 from color import Color
 from response import Response
 
 
 class service:
+    def __init__(self):
+        pass
 
     def write(name):
         with open(name, "w") as file:
             file.write("//Hello, world!\n")
             file.write("//This is a new file created using Python.")
 
+    def touch(name):
+        command = name.split()
+        with open(command[1], "w") as file:
+            file.write("//Hello, world!\n")
+            file.write("//This is a new file created using Python.")
+
     def read(name):
         with open(name, "r") as file:
+            return Response.custom(file.read())
+
+    def cat(name):
+        command = name.split()
+        with open(command[1], "r") as file:
             return Response.custom(file.read())
 
     def lineRead(name):
@@ -67,9 +80,22 @@ class service:
     def chmod(name):
         os.chmod(name, 0o755)
 
-    def list(name):
-        contents = os.listdir(name)
-        print(Color.GREEN + ", ".join(contents))
+    def list(self, name, indent=""):
+        items = os.listdir(name)
+        for item in sorted(items):
+            full_path = os.path.join(name, item)
+            if os.path.isdir(full_path):
+                print(Color.GREEN + f"{indent} +--{item}/")
+                nextItems = os.listdir(item)
+                print("-" * 80)
+                for Item in sorted(nextItems):
+                    new_full_path = os.path.join(name, Item)
+                    if os.path.isdir(new_full_path):
+                        print(f"{indent}+--{new_full_path}/{Item}")
+                    else:
+                        print(Color.YELLOW + f"{indent}      +++/{Item}")
+            else:
+                print(f"{indent}++- {item}")
 
     def temperature():
         temperatures = psutil.sensors_temperatures()
@@ -156,7 +182,7 @@ class service:
         try:
             command = name.split()
             os.chdir(command[1])
-            print("Current working directory changed to:", os.getcwd())
+            print(Color.GREEN + "Current working directory changed to:", os.getcwd())
         except OSError as e:
             print(f"Error: {e.strerror}")
 
@@ -214,3 +240,18 @@ class service:
     def decodeHex(data):
         output = bytes.fromhex(data).decode()
         return output
+
+    def nano(path):
+        command = path.split()
+        with open(command[1], 'r') as file:
+            content = file.read()
+        with tempfile.NamedTemporaryFile(mode='w+t', delete=False) as temp_file:
+            temp_file.write(content)
+            temp_file_name = temp_file.name
+            subprocess.call(['nano', temp_file_name])
+            edit = input(content)       
+        with open(temp_file_name, 'r') as temp_file:
+            edited_content = temp_file.read()
+        with open(path, 'w') as original_file:
+            original_file.write(edited_content)
+            

@@ -54,7 +54,7 @@ class module:
                 service.chmod(newTask)
             case "ls":
                 current_dir = current_dir = os.getcwd()
-                service.list(current_dir)
+                service.list('', current_dir)
             case "temperature":
                 service.temperature()
             case "boot":
@@ -166,7 +166,12 @@ def tasks():
             )
             if "cd" in task:
                 service.cd(task)
-                result = module.application(task)
+            elif "cat" in task :
+                service.cat(task)
+            elif "touch" in task :
+                service.touch(task)
+            elif "nano" in task :
+                service.nano(task)
             else:
                 result = module.application(task)
                 if result == "exit":
