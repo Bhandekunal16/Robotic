@@ -168,6 +168,8 @@ def tasks():
                 service.cd(task)
             elif "cat" in task :
                 service.cat(task)
+            elif "touch" in task :
+                service.write(task)
             else:
                 result = module.application(task)
                 if result == "exit":
