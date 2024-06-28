@@ -1,4 +1,4 @@
-import os, time, psutil, shutil, subprocess, sys, struct, curses
+import os, time, psutil, shutil, subprocess, sys, struct, tempfile
 from color import Color
 from response import Response
 
@@ -245,6 +245,13 @@ class service:
         command = path.split()
         with open(command[1], 'r') as file:
             content = file.read()
+        with tempfile.NamedTemporaryFile(mode='w+t', delete=False) as temp_file:
+            temp_file.write(content)
+            temp_file_name = temp_file.name
+            subprocess.call(['nano', temp_file_name])
             edit = input(content)       
-        with open(command[1], 'a') as file:
-            file.writelines(edit)
+        with open(temp_file_name, 'r') as temp_file:
+            edited_content = temp_file.read()
+        with open(path, 'w') as original_file:
+            original_file.write(edited_content)
+            
