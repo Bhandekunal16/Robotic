@@ -166,7 +166,6 @@ def tasks():
             )
             if "cd" in task:
                 service.cd(task)
-                result = module.application(task)
             else:
                 result = module.application(task)
                 if result == "exit":
