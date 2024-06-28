@@ -171,7 +171,7 @@ class service:
         try:
             command = name.split()
             os.chdir(command[1])
-            print("Current working directory changed to:", os.getcwd())
+            print(Color.GREEN + "Current working directory changed to:", os.getcwd())
         except OSError as e:
             print(f"Error: {e.strerror}")
 
