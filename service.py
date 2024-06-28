@@ -4,6 +4,8 @@ from response import Response
 
 
 class service:
+    def __init__(self):
+        pass
 
     def write(name):
         with open(name, "w") as file:
@@ -67,9 +69,21 @@ class service:
     def chmod(name):
         os.chmod(name, 0o755)
 
-    def list(name):
-        contents = os.listdir(name)
-        print(Color.GREEN + ", ".join(contents))
+    def list(self, name, indent=""):
+        items = os.listdir(name)
+        for item in sorted(items):
+            full_path = os.path.join(name, item)
+            if os.path.isdir(full_path):
+                print(f"{indent}+-- {item}/")
+                nextItems = os.listdir(item)
+                for Item in sorted(nextItems):
+                    new_full_path = os.path.join(name, Item)
+                    if os.path.isdir(new_full_path):
+                        print(f"{indent}+--{new_full_path}/{Item}")
+                    else:
+                        print(f"{indent}      +--/{Item}")
+            else:
+                print(f"{indent}+-- {item}")
 
     def temperature():
         temperatures = psutil.sensors_temperatures()

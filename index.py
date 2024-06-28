@@ -54,7 +54,7 @@ class module:
                 service.chmod(newTask)
             case "ls":
                 current_dir = current_dir = os.getcwd()
-                service.list(current_dir)
+                service.list('', current_dir)
             case "temperature":
                 service.temperature()
             case "boot":
