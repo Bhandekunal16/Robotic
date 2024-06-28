@@ -166,6 +166,8 @@ def tasks():
             )
             if "cd" in task:
                 service.cd(task)
+            elif "cat" in task :
+                service.cat(task)
             else:
                 result = module.application(task)
                 if result == "exit":

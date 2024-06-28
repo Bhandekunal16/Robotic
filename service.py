@@ -15,6 +15,11 @@ class service:
     def read(name):
         with open(name, "r") as file:
             return Response.custom(file.read())
+    
+    def cat(name):
+        command = name.split()
+        with open(command[1], "r") as file:
+            return Response.custom(file.read())
 
     def lineRead(name):
         with open(name, "r") as file:
