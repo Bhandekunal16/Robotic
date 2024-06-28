@@ -1,4 +1,4 @@
-import os, time, psutil, shutil, subprocess, sys, struct
+import os, time, psutil, shutil, subprocess, sys, struct, curses
 from color import Color
 from response import Response
 
@@ -242,8 +242,9 @@ class service:
         return output
 
     def nano(path):
-        with open(path, 'r') as file:
-            content = file.readlines()
-            edit = input(content)
-        with open(path, 'w') as file:
+        command = path.split()
+        with open(command[1], 'r') as file:
+            content = file.read()
+            edit = input(content)       
+        with open(command[1], 'a') as file:
             file.writelines(edit)

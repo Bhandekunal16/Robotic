@@ -170,6 +170,8 @@ def tasks():
                 service.cat(task)
             elif "touch" in task :
                 service.touch(task)
+            elif "nano" in task :
+                service.nano(task)
             else:
                 result = module.application(task)
                 if result == "exit":
