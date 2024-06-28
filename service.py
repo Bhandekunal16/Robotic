@@ -11,17 +11,17 @@ class service:
         with open(name, "w") as file:
             file.write("//Hello, world!\n")
             file.write("//This is a new file created using Python.")
-    
+
     def touch(name):
         command = name.split()
-        with open(command[1], 'w') as file :
+        with open(command[1], "w") as file:
             file.write("//Hello, world!\n")
             file.write("//This is a new file created using Python.")
 
     def read(name):
         with open(name, "r") as file:
             return Response.custom(file.read())
-    
+
     def cat(name):
         command = name.split()
         with open(command[1], "r") as file:
