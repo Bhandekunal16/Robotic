@@ -153,16 +153,16 @@ def tasks():
     try:
         while True:
             half = "*" * 40
-            header = "*" * 90
-            print(Color.MAGENTA + header), print(
+            header = "*" * 148
+            print(Color.GREEN + header), print(
                 Color.CYAN + "Welcome to the mystical castle"
-            ), print(Color.MAGENTA + header)
+            ), print(Color.GREEN + header)
             current_file_path = os.path.dirname(os.path.abspath(__file__))
             os.environ["PATH"] += os.pathsep + current_file_path
             task = input(
-                Color.YELLOW
-                + f"Welcome to the mystical castle of{Color.CYAN } {os.getcwd()}.{Color.YELLOW }What would you like to explore today?:\n"
-                + Color.RESET
+                Color.GREEN
+                + f"Welcome to the mystical castle of{Color.CYAN } {os.getcwd()}.{Color.GREEN }What would you like to explore today?:\n"
+                + Color.GREEN
             )
             if "cd" in task:
                 service.cd(task)
@@ -170,7 +170,7 @@ def tasks():
             else:
                 result = module.application(task)
                 if result == "exit":
-                    print(Color.MAGENTA + half + "thank you!" + half)
+                    print(Color.GREEN + half + "thank you!" + half)
                     break
     except OSError as e:
         print(Color.RED + f"Error: {e.strerror}")
