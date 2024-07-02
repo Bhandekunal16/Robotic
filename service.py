@@ -94,7 +94,7 @@ class service:
                         print(f"{indent}+--{new_full_path}/{Item}")
                     else:
                         print(Color.YELLOW + '.' + f"{indent}      ./{Item}" + Color.RESET )
-                print("-" * 100)
+                print("-" * 47 + 'END' + "-" * 48)
             else:
                 print(f"{indent} {item}")
 
