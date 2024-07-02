@@ -117,7 +117,7 @@ class module:
                 data = algorithm.decrypt(publicKey, privateKey, data)
                 print(data)
             case _:
-                print(f"{task} this task not matched with anything")
+                print(Color.RED + f"Command {task} not found!")
 
 
 def tasks():
