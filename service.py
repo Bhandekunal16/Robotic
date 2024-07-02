@@ -99,7 +99,7 @@ class service:
     def temperature():
         temperatures = psutil.sensors_temperatures()
         if temperatures:
-            print("CPU Temperatures:")
+            print(string.CPUTemperatures)
         for name, entries in temperatures.items():
             for entry in entries:
                 print(f"{name}: {entry.current}°C")

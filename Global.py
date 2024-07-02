@@ -26,3 +26,4 @@ class string:
     UsedMemory: str = 'Used Memory :'
     FreeMemory: str = 'Free Memory :'
     bytes : str = 'bytes'
+    CPUTemperatures: str = "CPU Temperatures:"
