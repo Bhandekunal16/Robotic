@@ -107,13 +107,13 @@ class module:
             case "encrypt":
                 publicKey = input("enter your publicKey :")
                 privateKey = environment.privateKey
-                data = input("enter you data :")
+                data = input(string.enterData)
                 data = algorithm.encrypt(publicKey, privateKey, data)
                 print(data)
             case "decrypt":
                 publicKey = input("enter your publicKey :")
                 privateKey = environment.privateKey
-                data = input("enter you data :")
+                data = input(string.enterData)
                 data = algorithm.decrypt(publicKey, privateKey, data)
                 print(data)
             case _:
