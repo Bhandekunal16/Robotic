@@ -34,8 +34,7 @@ class service:
                 print(line.strip())
 
     def edit(name, Content):
-        with open(name, "a") as file:
-            file.write(Content)
+        file.write(name, "a", Content)
 
     def mkdir(name):
         os.makedirs(name, exist_ok=True)
