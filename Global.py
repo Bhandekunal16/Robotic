@@ -12,3 +12,4 @@ class string:
     initialFileContent: str = "//Hello, world!\n//This is a new file created using Python."
     folderCreatedSuccessfully: str = "Folder created successfully."
     failToCreate: str ="Failed to create folder."
+    removeFolder:str = "File removed successfully."

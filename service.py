@@ -45,14 +45,14 @@ class service:
     def remove(path: str):
         try:
             os.remove(path)
-            print(Color.GREEN + "File removed successfully.")
+            print(Color.GREEN + string.removeFolder)
         except OSError as e:
             print(f"Error: {path} : {e.strerror}")
 
     def rmdir(path: str):
         try:
             os.rmdir(path)
-            print(Color.GREEN + "Folder removed successfully.")
+            print(Color.GREEN + string.removeFolder)
         except OSError as e:
             print(f"Error: {path} : {e.strerror}")
 
