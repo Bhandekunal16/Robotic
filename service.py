@@ -86,7 +86,7 @@ class service:
             print(Color.YELLOW + "-" * 100 + Color.RESET)
             full_path = os.path.join(name, item)
             if os.path.isdir(full_path):
-                print(Color.RESET + f"{indent} name : {item}/" )
+                print(Color.RESET + f"{indent} folder : {item}/" )
                 nextItems = os.listdir(item)
                 print(Color.RESET + 'total item :' + str(len(nextItems)))
                 print("-" * 47 + 'folder' + "-" * 48)
