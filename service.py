@@ -226,10 +226,10 @@ class service:
             return binary_str
 
     def binaryRepresentation(name):
-        with open(name, "rb") as file:
-            binary_data = file.read()
+        with open(name, "rb") as File:
+            binary_data = File.read()
             binary_str = "".join(f"{byte:08b}" for byte in binary_data)
-            print("Binary representation of file", name, "is:", binary_str)
+            file.write(f'./bin/{name}.bin', 'w', binary_str)
             return binary_data
 
     def hex(data):
