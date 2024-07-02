@@ -80,7 +80,7 @@ class module:
                 newTask: int = int(input(string.enterLengthForString))
                 service.random(newTask)
             case "binary":
-                print("suggested type (str, int, float)")
+                print(string.suggestion)
                 newTask = input("enter type of input data:")
 
                 if newTask == "str":

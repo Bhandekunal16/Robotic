@@ -4,3 +4,4 @@ class string :
     enterTask: str = "enter the task :"
     enterData: str = "enter your data :"
     enterLengthForString: str ="enter length for string :"
+    suggestion : str = "suggested type (str, int, float)"
