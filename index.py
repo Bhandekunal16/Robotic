@@ -92,9 +92,6 @@ class module:
             case "heavyTask":
                 newTask: str = input("enter the task :")
                 service.generate(newTask)
-            case "ping":
-                task: str = input("enter the task :")
-                service.ping(task)
             case "shutdown":
                 service.shutdown()
             case "restart":
@@ -172,6 +169,8 @@ def tasks():
                 service.touch(task)
             elif "nano" in task:
                 service.nano(task)
+            elif "ping" in task :
+                service.ping(task)
             else:
                 result = module.application(task)
                 if result == "exit":
