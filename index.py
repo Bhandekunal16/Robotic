@@ -7,9 +7,6 @@ from Global import string
 
 class module:
     def application(task):
-        """
-        application that sort the os function according your choice and do your work
-        """
         match task:
             case "write":
                 newTask: str = input(string.enterFileName)
