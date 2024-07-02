@@ -24,9 +24,6 @@ class module:
                 newTask: str = input("enter file name :")
                 content: str = input("enter content :")
                 service.edit(newTask, content)
-            case "mkdir":
-                newTask: str = input("enter folder name :")
-                service.mkdir(newTask)
             case "remove":
                 newTask: str = input("enter folder name :")
                 service.remove(newTask)
@@ -171,6 +168,9 @@ def tasks():
             elif "node" in task :
                 command = task.split()
                 service.node(command[1])
+            elif "mkdir" in task :
+                command = task.split()
+                service.mkdir(command[1]) 
             else:
                 result = module.application(task)
                 if result == "exit":
