@@ -32,9 +32,6 @@ class module:
                 service.cpu()
             case "exit":
                 return "exit"
-            case "chmod":
-                newTask: str = input("enter file name :")
-                service.chmod(newTask)
             case "ls":
                 current_dir = current_dir = os.getcwd()
                 service.list("", current_dir)
@@ -169,6 +166,9 @@ def tasks():
             elif "copy" in task:
                 command = task.split()
                 service.copy(command[1], command[3])
+            elif "chmod" in task :
+                command = task.split()
+                service.chmod(command[1])
             else:
                 result = module.application(task)
                 if result == "exit":
