@@ -21,14 +21,14 @@ class service:
             "//Hello, world!\n//This is a new file created using Python.",
         )
 
-    def read(path : str):
+    def read(path: str):
         file.read(path, "r")
 
-    def cat(path : str):
+    def cat(path: str):
         command = path.split()
         file.read(command[1], "r")
 
-    def lineRead(path : str):
+    def lineRead(path: str):
         with open(path, "r") as file:
             for line in file:
                 print(line.strip())
