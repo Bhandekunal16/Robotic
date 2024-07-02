@@ -29,3 +29,5 @@ class string:
     CPUTemperatures: str = "CPU Temperatures:"
     C: str = "°C"
     Error: str = "Error"
+    keyNotFound: str = "key not found"
+    dataNotFound:str = "data not found"
