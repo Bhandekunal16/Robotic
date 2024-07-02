@@ -169,10 +169,9 @@ def tasks():
             elif "chmod" in task :
                 command = task.split()
                 service.chmod(command[1])
-            elif "task" in task :
+            elif "run" in task :
                 command = task.split()
-                print(command)
-                # service.chmod(command[1])
+                service.versions(command[1], command[2])
             else:
                 result = module.application(task)
                 if result == "exit":

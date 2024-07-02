@@ -166,9 +166,8 @@ class service:
         )
         print(data.stdout)
 
-    def versions(name):
-        command = name.split()
-        data = subprocess.run([command[0], command[1]], capture_output=True, text=True)
+    def versions(part1, part2):
+        data = subprocess.run([part1, part2], capture_output=True, text=True)
         print(data.stdout)
 
     def ping(name):
