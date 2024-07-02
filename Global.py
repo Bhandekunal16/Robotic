@@ -8,3 +8,4 @@ class string :
     qus1: str = "what process you want?"
     enterPublicKey: str = "enter your publicKey :"
     welcome : str = "Welcome to the mystical castle"
+    thankYou: str = "thank you!"
