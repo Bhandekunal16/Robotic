@@ -93,8 +93,8 @@ class module:
                 newTask: str = input("enter the task :")
                 service.generate(newTask)
             case "ping":
-                newTask: str = input("enter the task :")
-                service.ping(newTask)
+                task: str = input("enter the task :")
+                service.ping(task)
             case "shutdown":
                 service.shutdown()
             case "restart":
