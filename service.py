@@ -243,15 +243,14 @@ class service:
 
     def nano(path):
         command = path.split()
-        with open(command[1], 'r') as file:
+        with open(command[1], "r") as file:
             content = file.read()
-        with tempfile.NamedTemporaryFile(mode='w+t', delete=False) as temp_file:
+        with tempfile.NamedTemporaryFile(mode="w+t", delete=False) as temp_file:
             temp_file.write(content)
             temp_file_name = temp_file.name
-            subprocess.call(['nano', temp_file_name])
-            edit = input(content)       
-        with open(temp_file_name, 'r') as temp_file:
+            subprocess.call(["nano", temp_file_name])
+            edit = input(content)
+        with open(temp_file_name, "r") as temp_file:
             edited_content = temp_file.read()
-        with open(path, 'w') as original_file:
+        with open(path, "w") as original_file:
             original_file.write(edited_content)
-            
