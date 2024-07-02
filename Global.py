@@ -9,10 +9,12 @@ class string:
     enterPublicKey: str = "enter your publicKey :"
     welcome: str = "Welcome to the mystical castle"
     thankYou: str = "thank you!"
-    initialFileContent: str = "//Hello, world!\n//This is a new file created using Python."
+    initialFileContent: str = (
+        "//Hello, world!\n//This is a new file created using Python."
+    )
     folderCreatedSuccessfully: str = "Folder created successfully."
-    failToCreate: str ="Failed to create folder."
-    removeFolder:str = "File removed successfully."
+    failToCreate: str = "Failed to create folder."
+    removeFolder: str = "File removed successfully."
     fileFound: str = "Found files at this location:"
     fileNotFound: str = "No files found with the specified name and extension."
-    BinaryRepresentationOf:str = "Binary representation of"
+    BinaryRepresentationOf: str = "Binary representation of"
