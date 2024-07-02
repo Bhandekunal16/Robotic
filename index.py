@@ -77,7 +77,7 @@ class module:
             case "process":
                 service.process()
             case "random":
-                newTask: int = int(input("enter length for string :"))
+                newTask: int = int(input(string.enterLengthForString))
                 service.random(newTask)
             case "binary":
                 print("suggested type (str, int, float)")
