@@ -64,7 +64,7 @@ class module:
             case "python --v":
                 service.version()
             case "heavyTask":
-                newTask: str = input("enter the task :")
+                newTask: str = input(string.enterTask)
                 service.generate(newTask)
             case "shutdown":
                 service.shutdown()
@@ -84,13 +84,13 @@ class module:
                 newTask = input("enter type of input data:")
 
                 if newTask == "str":
-                    enter = input("enter your data :")
+                    enter = input(string.enterData)
                     service.binaryConverter(enter)
                 elif newTask == "int":
-                    enter = int(input("enter your data :"))
+                    enter = int(input(string.enterData))
                     service.binaryConverter(enter)
                 elif newTask == "float":
-                    enter = float(input("enter your data :"))
+                    enter = float(input(string.enterData))
                     service.binaryConverter(enter)
             case "represent":
                 newTask = input("enter the file name :")
@@ -99,10 +99,10 @@ class module:
                 print("what process you want?")
                 newTask = input("enter type of input data:")
                 if newTask == "encode":
-                    newTask2 = input("enter your data :")
+                    newTask2 = input(string.enterData)
                     service.hex(newTask2)
                 elif newTask == "decode":
-                    newTask2 = input("enter your data :")
+                    newTask2 = input(string.enterData)
                     service.decodeHex(newTask2)
             case "encrypt":
                 publicKey = input("enter your publicKey :")
