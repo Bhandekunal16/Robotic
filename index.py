@@ -5,6 +5,7 @@ from algorithm import algorithm
 from environment import environment
 from Global import string
 
+
 class module:
     def application(task):
         match task:
@@ -121,9 +122,9 @@ def tasks():
         while True:
             half = "*" * 69
             header = "*" * 149
-            print(Color.GREEN + header), print(
-                Color.CYAN + string.welcome
-            ), print(Color.GREEN + header)
+            print(Color.GREEN + header), print(Color.CYAN + string.welcome), print(
+                Color.GREEN + header
+            )
             current_file_path = os.path.dirname(os.path.abspath(__file__))
             os.environ["PATH"] += os.pathsep + current_file_path
             task = input(
