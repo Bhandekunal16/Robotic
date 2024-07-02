@@ -15,9 +15,9 @@ class service:
 
     def touch(name):
         command = name.split()
-        with open(command[1], "w") as file:
-            file.write("//Hello, world!\n")
-            file.write("//This is a new file created using Python.")
+        file.write(
+            command[1], "w", "//Hello, world!\n//This is a new file created using Python."
+        )
 
     def read(name):
         with open(name, "r") as file:
