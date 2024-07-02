@@ -20,3 +20,4 @@ class string:
     BinaryRepresentationOf: str = "Binary representation of"
     currentDirectory: str = "Current working directory changed to:"
     permissionFound : str = "permission found : read,write"
+    CPUUsage: str = "CPU Usage:"

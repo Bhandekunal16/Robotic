@@ -68,7 +68,7 @@ class service:
         )
 
     def cpu():
-        print(f"CPU Usage: {psutil.cpu_percent()}%")
+        print(f"{string.CPUUsage} {psutil.cpu_percent()}%")
 
     def copy(source, destination):
         shutil.copy(source, destination)
