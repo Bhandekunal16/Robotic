@@ -25,3 +25,4 @@ class string:
     AvailableMemory: str = 'Available Memory :'
     UsedMemory: str = 'Used Memory :'
     FreeMemory: str = 'Free Memory :'
+    bytes : str = 'bytes'
