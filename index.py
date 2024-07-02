@@ -123,7 +123,7 @@ def tasks():
             half = "*" * 69
             header = "*" * 149
             print(Color.GREEN + header), print(
-                Color.CYAN + "Welcome to the mystical castle"
+                Color.CYAN + string.welcome
             ), print(Color.GREEN + header)
             current_file_path = os.path.dirname(os.path.abspath(__file__))
             os.environ["PATH"] += os.pathsep + current_file_path
