@@ -16,17 +16,17 @@ class service:
     def touch(name):
         command = name.split()
         file.write(
-            command[1], "w", "//Hello, world!\n//This is a new file created using Python."
+            command[1],
+            "w",
+            "//Hello, world!\n//This is a new file created using Python.",
         )
 
     def read(name):
-        with open(name, "r") as file:
-            return Response.custom(file.read())
+        file.read(name, "r")
 
     def cat(name):
         command = name.split()
-        with open(command[1], "r") as file:
-            return Response.custom(file.read())
+        file.read(command[1], "r")
 
     def lineRead(name):
         with open(name, "r") as file:
