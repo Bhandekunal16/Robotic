@@ -13,3 +13,4 @@ class string:
     folderCreatedSuccessfully: str = "Folder created successfully."
     failToCreate: str ="Failed to create folder."
     removeFolder:str = "File removed successfully."
+    fileFound: str = "Found files at this location:"
