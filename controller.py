@@ -16,7 +16,9 @@ def get_books():
 def encrypt():
     body = request.get_json()
     if "publicKey" in body and "data" in body:
-        response = algorithm.encrypt(body["publicKey"], environment.privateKey, body["data"])
+        response = algorithm.encrypt(
+            body["publicKey"], environment.privateKey, body["data"]
+        )
         return Response.encryption(response)
 
 
