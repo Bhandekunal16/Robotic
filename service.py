@@ -33,8 +33,8 @@ class service:
             for line in file:
                 print(line.strip())
 
-    def edit(path, Content):
-        file.write(path, "a", Content)
+    def edit(path : str, content):
+        file.write(path, "a", content)
 
     def mkdir(path):
         os.makedirs(path, exist_ok=True)
