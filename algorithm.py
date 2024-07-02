@@ -20,7 +20,7 @@ class algorithm:
                 ).hexdigest()
                 return head + body + hashed_string
         except OSError as e:
-            print(f"Error: {e.strerror}")
+            print(f"{string.Error} {e.strerror}")
 
     def decrypt(publicKey: str, privateKey: str, data):
         try:
@@ -49,4 +49,4 @@ class algorithm:
                 return decoded_data
 
         except OSError as e:
-            print(f"Error: {e.strerror}")
+            print(f"{string.Error} {e.strerror}")
