@@ -93,13 +93,13 @@ class module:
                 service.binaryRepresentation(name)
             case "hex-decimal":
                 print(string.qus1)
-                newTask = input(string.enterData)
-                if newTask == "encode":
-                    newTask2 = input(string.enterData)
-                    service.hex(newTask2)
-                elif newTask == "decode":
-                    newTask2 = input(string.enterData)
-                    service.decodeHex(newTask2)
+                type = input(string.enterData)
+                if type == "encode":
+                    convert = input(string.enterData)
+                    service.hex(convert)
+                elif type == "decode":
+                    convert = input(string.enterData)
+                    service.decodeHex(convert)
             case "encrypt":
                 publicKey = input(string.enterPublicKey)
                 privateKey = environment.privateKey
