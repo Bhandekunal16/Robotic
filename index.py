@@ -24,9 +24,6 @@ class module:
                 newTask: str = input("enter file name :")
                 content: str = input("enter content :")
                 service.edit(newTask, content)
-            case "rmdir":
-                newTask: str = input("enter folder name :")
-                service.rmdir(newTask)
             case "simulate":
                 service.long_running_task()
             case "memory":
@@ -171,6 +168,9 @@ def tasks():
             elif "remove" in task :
                 command = task.split()
                 service.remove(command[1])
+            elif "rmdir" in task :
+                command = task.split()
+                service.rmdir(command[1])
             else:
                 result = module.application(task)
                 if result == "exit":
