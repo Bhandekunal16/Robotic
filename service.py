@@ -81,11 +81,10 @@ class service:
 
     def list(self, name, indent=""):
         items = os.listdir(name)
-        print('total item :' + str(len(items)))
+        print(Color.RESET + 'total item :' + str(len(items)))
         for item in sorted(items):
             full_path = os.path.join(name, item)
             if os.path.isdir(full_path):
-                print("-" * 100)
                 print(Color.RESET + f"{indent} {item}/" )
                 nextItems = os.listdir(item)
                 print("-" * 47 + 'folder' + "-" * 48)
