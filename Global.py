@@ -30,4 +30,4 @@ class string:
     C: str = "°C"
     Error: str = "Error"
     keyNotFound: str = "key not found"
-    dataNotFound:str = "data not found"
+    dataNotFound: str = "data not found"
