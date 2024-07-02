@@ -18,4 +18,4 @@ class string:
     fileFound: str = "Found files at this location:"
     fileNotFound: str = "No files found with the specified name and extension."
     BinaryRepresentationOf: str = "Binary representation of"
-    currentDirectory : str = "Current working directory changed to:"
+    currentDirectory: str = "Current working directory changed to:"
