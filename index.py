@@ -78,14 +78,14 @@ class module:
                 service.random(length)
             case "binary":
                 print(string.suggestion)
-                newTask = input(string.enterData)
-                if newTask == "str":
+                type = input(string.enterData)
+                if type == "str":
                     enter = input(string.enterData)
                     service.binaryConverter(enter)
-                elif newTask == "int":
+                elif type == "int":
                     enter = int(input(string.enterData))
                     service.binaryConverter(enter)
-                elif newTask == "float":
+                elif type == "float":
                     enter = float(input(string.enterData))
                     service.binaryConverter(enter)
             case "represent":
