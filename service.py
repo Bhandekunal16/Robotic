@@ -1,6 +1,7 @@
 import os, time, psutil, shutil, subprocess, sys, struct, tempfile
 from color import Color
 from response import Response
+from file import file
 
 
 class service:
@@ -8,9 +9,10 @@ class service:
         pass
 
     def write(name):
-        with open(name, "w") as file:
-            file.write("//Hello, world!\n")
-            file.write("//This is a new file created using Python.")
+        # with open(name, "w") as file:
+        file.write(
+            name, "w", "//Hello, world!\n //This is a new file created using Python."
+        )
 
     def touch(name):
         command = name.split()
