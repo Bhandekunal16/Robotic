@@ -102,7 +102,7 @@ class service:
             print(string.CPUTemperatures)
         for name, entries in temperatures.items():
             for entry in entries:
-                print(f"{name}: {entry.current}°C")
+                print(f"{name}: {entry.current} {string.C}")
 
     def bootTime():
         Response.custom(psutil.boot_time())
