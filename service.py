@@ -83,7 +83,7 @@ class service:
         items = os.listdir(name)
         print(Color.RESET + 'total item :' + str(len(items)))
         for item in sorted(items):
-            print("*" * 100)
+            print(Color.YELLOW + "-" * 100 + Color.RESET)
             full_path = os.path.join(name, item)
             if os.path.isdir(full_path):
                 print(Color.RESET + f"{indent} {item}/" )
@@ -97,7 +97,7 @@ class service:
                     if os.path.isdir(new_full_path):
                         print(f"{indent}+--{new_full_path}/{Item}")
                     else:
-                        print(Color.YELLOW +'.' +f"{indent}     ./{Item}" + Color.RESET )
+                        print(Color.YELLOW +f"{indent}     ./{Item}" + Color.RESET )
                 print("-" * 48 + ' END ' + "-" * 48)
             else:
                 print(f"{indent} {item}")
