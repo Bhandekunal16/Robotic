@@ -9,3 +9,4 @@ class string:
     enterPublicKey: str = "enter your publicKey :"
     welcome: str = "Welcome to the mystical castle"
     thankYou: str = "thank you!"
+    initialFileContent: str = "//Hello, world!\n//This is a new file created using Python."

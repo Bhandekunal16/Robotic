@@ -2,6 +2,7 @@ import os, time, psutil, shutil, subprocess, sys, struct, tempfile
 from color import Color
 from response import Response
 from file import file
+from Global import string
 
 
 class service:
@@ -9,16 +10,14 @@ class service:
         pass
 
     def write(path: str):
-        file.write(
-            path, "w", "//Hello, world!\n//This is a new file created using Python."
-        )
+        file.write(path, "w", string.initialFileContent)
 
     def touch(path: str):
         command = path.split()
         file.write(
             command[1],
             "w",
-            "//Hello, world!\n//This is a new file created using Python.",
+            string.initialFileContent,
         )
 
     def read(path: str):
@@ -229,7 +228,7 @@ class service:
         with open(name, "rb") as File:
             binary_data = File.read()
             binary_str = "".join(f"{byte:08b}" for byte in binary_data)
-            file.write(f'./bin/{name}.bin', 'w', binary_str)
+            file.write(f"./bin/{name}.bin", "w", binary_str)
             return binary_data
 
     def hex(data):
