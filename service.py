@@ -201,7 +201,7 @@ class service:
             for file_path in found_files:
                 print(file_path)
         else:
-            print("No files found with the specified name and extension.")
+            print(string.fileNotFound)
 
     def process():
         print(os.getpid())

@@ -14,3 +14,4 @@ class string:
     failToCreate: str ="Failed to create folder."
     removeFolder:str = "File removed successfully."
     fileFound: str = "Found files at this location:"
+    fileNotFound: str = "No files found with the specified name and extension."
