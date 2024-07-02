@@ -10,3 +10,5 @@ class string:
     welcome: str = "Welcome to the mystical castle"
     thankYou: str = "thank you!"
     initialFileContent: str = "//Hello, world!\n//This is a new file created using Python."
+    folderCreatedSuccessfully: str = "Folder created successfully."
+    failToCreate: str ="Failed to create folder."

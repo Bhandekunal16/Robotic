@@ -38,9 +38,9 @@ class service:
     def mkdir(path: str):
         os.makedirs(path, exist_ok=True)
         if os.path.exists(path):
-            print("Folder created successfully.")
+            print(string.folderCreatedSuccessfully)
         else:
-            print("Failed to create folder.")
+            print(string.failToCreate)
 
     def remove(path: str):
         try:
