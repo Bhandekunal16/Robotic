@@ -93,7 +93,7 @@ class service:
                     if os.path.isdir(new_full_path):
                         print(f"{indent}+--{new_full_path}/{Item}")
                     else:
-                        print(Color.YELLOW + f"{indent}      ./{Item}" + Color.RESET)
+                        print(Color.YELLOW + '.' + f"{indent}      ./{Item}" + Color.RESET )
                 print("-" * 100)
             else:
                 print(f"{indent} {item}")
