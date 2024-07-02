@@ -169,7 +169,7 @@ def tasks():
             else:
                 result = module.application(task)
                 if result == "exit":
-                    print(Color.GREEN + half + "thank you!" + half)
+                    print(Color.GREEN + half + string.thankYou + half)
                     break
     except OSError as e:
         print(Color.RED + f"Error: {e.strerror}")
