@@ -180,7 +180,7 @@ class service:
         try:
             command = name.split()
             os.chdir(command[1])
-            print(Color.GREEN + string.currentDirectory , os.getcwd())
+            print(Color.GREEN + string.currentDirectory, os.getcwd())
         except OSError as e:
             print(f"Error: {e.strerror}")
 
