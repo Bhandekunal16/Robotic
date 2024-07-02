@@ -19,3 +19,4 @@ class string:
     fileNotFound: str = "No files found with the specified name and extension."
     BinaryRepresentationOf: str = "Binary representation of"
     currentDirectory: str = "Current working directory changed to:"
+    permissionFound : str = "permission found : read,write"

@@ -148,7 +148,7 @@ class service:
         per = os.stat(path)
         code = str(per.st_mode)
         if code.find("689"):
-            print("permission found : read,write")
+            print(string.permissionFound)
         print(per.st_mode)
 
     def version():
