@@ -33,24 +33,24 @@ class service:
             for line in file:
                 print(line.strip())
 
-    def edit(path : str, content):
+    def edit(path: str, content):
         file.write(path, "a", content)
 
-    def mkdir(path : str):
+    def mkdir(path: str):
         os.makedirs(path, exist_ok=True)
         if os.path.exists(path):
             print("Folder created successfully.")
         else:
             print("Failed to create folder.")
 
-    def remove(path : str):
+    def remove(path: str):
         try:
             os.remove(path)
             print(Color.GREEN + "File removed successfully.")
         except OSError as e:
             print(f"Error: {path} : {e.strerror}")
 
-    def rmdir(path : str):
+    def rmdir(path: str):
         try:
             os.rmdir(path)
             print(Color.GREEN + "Folder removed successfully.")
