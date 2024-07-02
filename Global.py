@@ -21,3 +21,4 @@ class string:
     currentDirectory: str = "Current working directory changed to:"
     permissionFound : str = "permission found : read,write"
     CPUUsage: str = "CPU Usage:"
+    TotalMemory:str = "Total Memory:"

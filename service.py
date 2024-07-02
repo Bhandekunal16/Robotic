@@ -64,7 +64,7 @@ class service:
     def memory():
         mem = psutil.virtual_memory()
         print(
-            f"Total Memory: {mem.total} bytes\n Available Memory: {mem.available} bytes\n Used Memory: {mem.used} bytes\n Free Memory: {mem.free} bytes\n"
+            f"{string.TotalMemory} {mem.total} bytes\n Available Memory: {mem.available} bytes\n Used Memory: {mem.used} bytes\n Free Memory: {mem.free} bytes\n"
         )
 
     def cpu():
