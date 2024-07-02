@@ -1,11 +1,11 @@
-class string :
-    enterFileName : str= "enter file name :"
-    enterContent : str = "enter content :"
+class string:
+    enterFileName: str = "enter file name :"
+    enterContent: str = "enter content :"
     enterTask: str = "enter the task :"
     enterData: str = "enter your data :"
-    enterLengthForString: str ="enter length for string :"
-    suggestion : str = "suggested type (str, int, float)"
+    enterLengthForString: str = "enter length for string :"
+    suggestion: str = "suggested type (str, int, float)"
     qus1: str = "what process you want?"
     enterPublicKey: str = "enter your publicKey :"
-    welcome : str = "Welcome to the mystical castle"
+    welcome: str = "Welcome to the mystical castle"
     thankYou: str = "thank you!"
