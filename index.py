@@ -36,10 +36,6 @@ class module:
                 newTask: str = input("enter file name :")
                 newTask2: str = input("enter destination for the file :")
                 service.copy(newTask, newTask2)
-            case "rename":
-                newTask: str = input("enter old file name :")
-                newTask2: str = input("enter new file name :")
-                service.copy(newTask, newTask2)
             case "chmod":
                 newTask: str = input("enter file name :")
                 service.chmod(newTask)
@@ -171,6 +167,9 @@ def tasks():
             elif "rmdir" in task :
                 command = task.split()
                 service.rmdir(command[1])
+            elif "rename" in task :
+                command = task.split()
+                service.rename(command[1], command[3])
             else:
                 result = module.application(task)
                 if result == "exit":
