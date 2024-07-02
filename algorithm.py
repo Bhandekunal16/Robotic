@@ -43,7 +43,7 @@ class algorithm:
                 check: str = newString.replace(nextNewString, "")
 
                 if check != hashed_string:
-                    print("Key not matched")
+                    print(string.keyNotFound)
                 else:
                     decoded_data = base64.b64decode(nextNewString.encode()).decode()
                 return decoded_data
