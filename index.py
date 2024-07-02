@@ -79,7 +79,6 @@ class module:
             case "binary":
                 print(string.suggestion)
                 newTask = input(string.enterData)
-
                 if newTask == "str":
                     enter = input(string.enterData)
                     service.binaryConverter(enter)
