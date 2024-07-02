@@ -6,3 +6,4 @@ class string :
     enterLengthForString: str ="enter length for string :"
     suggestion : str = "suggested type (str, int, float)"
     qus1: str = "what process you want?"
+    enterPublicKey: str = "enter your publicKey :"

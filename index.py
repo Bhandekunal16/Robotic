@@ -105,13 +105,13 @@ class module:
                     newTask2 = input(string.enterData)
                     service.decodeHex(newTask2)
             case "encrypt":
-                publicKey = input("enter your publicKey :")
+                publicKey = input(string.enterPublicKey)
                 privateKey = environment.privateKey
                 data = input(string.enterData)
                 data = algorithm.encrypt(publicKey, privateKey, data)
                 print(data)
             case "decrypt":
-                publicKey = input("enter your publicKey :")
+                publicKey = input(string.enterPublicKey)
                 privateKey = environment.privateKey
                 data = input(string.enterData)
                 data = algorithm.decrypt(publicKey, privateKey, data)
