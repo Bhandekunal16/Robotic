@@ -216,12 +216,12 @@ class service:
             return binary_str
         elif type(data) == int:
             binary_str = bin(data)
-            print("Binary representation of", data, "is:", binary_str)
+            print(string.BinaryRepresentationOf, data, "is:", binary_str)
             return binary_str
         elif type(data) == float:
             packed = struct.pack("!d", data)
             binary_str = "".join(f"{x:08b}" for x in packed)
-            print("Binary representation of", data, "is:", binary_str)
+            print(string.BinaryRepresentationOf, data, "is:", binary_str)
             return binary_str
 
     def binaryRepresentation(name):
