@@ -89,8 +89,8 @@ class module:
                     enter = float(input(string.enterData))
                     service.binaryConverter(enter)
             case "represent":
-                newTask = input(string.enterFileName)
-                service.binaryRepresentation(newTask)
+                name = input(string.enterFileName)
+                service.binaryRepresentation(name)
             case "hex-decimal":
                 print(string.qus1)
                 newTask = input(string.enterData)
