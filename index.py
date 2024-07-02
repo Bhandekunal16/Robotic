@@ -3,7 +3,7 @@ from color import Color
 import os
 from algorithm import algorithm
 from environment import environment
-
+from Global import string
 
 class module:
     def application(task):
@@ -12,16 +12,16 @@ class module:
         """
         match task:
             case "write":
-                newTask: str = input("enter file name :")
+                newTask: str = input(string.enterFileName)
                 service.write(newTask)
             case "read":
-                newTask: str = input("enter file name :")
+                newTask: str = input(string.enterFileName)
                 service.read(newTask)
             case "readline":
-                newTask: str = input("enter file name :")
+                newTask: str = input(string.enterFileName)
                 service.lineRead(newTask)
             case "edit":
-                newTask: str = input("enter file name :")
+                newTask: str = input(string.enterFileName)
                 content: str = input("enter content :")
                 service.edit(newTask, content)
             case "simulate":
@@ -71,7 +71,7 @@ class module:
             case "restart":
                 service.restart()
             case "search":
-                newTask: str = input("enter file name :")
+                newTask: str = input(string.enterFileName)
                 folder: str = os.getcwd()
                 service.search(folder, newTask)
             case "process":
