@@ -84,17 +84,19 @@ class service:
         for item in sorted(items):
             full_path = os.path.join(name, item)
             if os.path.isdir(full_path):
-                print(Color.GREEN + f"{indent} +--{item}/")
+                print("-" * 100)
+                print(Color.RESET + f"{indent} {item}/" )
                 nextItems = os.listdir(item)
-                print("-" * 80)
+                print("-" * 44 + 'folder' + "-" * 44)
                 for Item in sorted(nextItems):
                     new_full_path = os.path.join(name, Item)
                     if os.path.isdir(new_full_path):
                         print(f"{indent}+--{new_full_path}/{Item}")
                     else:
-                        print(Color.YELLOW + f"{indent}      +++/{Item}")
+                        print(Color.YELLOW + f"{indent}      ./{Item}" + Color.RESET)
+                print("-" * 100)
             else:
-                print(f"{indent}++- {item}")
+                print(f"{indent} {item}")
 
     def temperature():
         temperatures = psutil.sensors_temperatures()
