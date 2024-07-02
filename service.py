@@ -47,14 +47,14 @@ class service:
             os.remove(path)
             print(Color.GREEN + string.removeFolder)
         except OSError as e:
-            print(f"Error: {path} : {e.strerror}")
+            print(f"{string.Error} : {path} : {e.strerror}")
 
     def rmdir(path: str):
         try:
             os.rmdir(path)
             print(Color.GREEN + string.removeFolder)
         except OSError as e:
-            print(f"Error: {path} : {e.strerror}")
+            print(f"{string.Error} : {path} : {e.strerror}")
 
     def long_running_task():
         for i in range(10):

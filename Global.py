@@ -28,3 +28,4 @@ class string:
     bytes : str = 'bytes'
     CPUTemperatures: str = "CPU Temperatures:"
     C : str = "°C"
+    Error: str = 'Error'
