@@ -63,9 +63,6 @@ class module:
                 service.permission()
             case "python --v":
                 service.version()
-            # case "task":
-            #     newTask: str = input("enter the task :")
-            #     service.versions(newTask)
             case "heavyTask":
                 newTask: str = input("enter the task :")
                 service.generate(newTask)
