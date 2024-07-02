@@ -123,8 +123,8 @@ class module:
 def tasks():
     try:
         while True:
-            half = "*" * 40
-            header = "*" * 148
+            half = "*" * 68
+            header = "*" * 149
             print(Color.GREEN + header), print(
                 Color.CYAN + "Welcome to the mystical castle"
             ), print(Color.GREEN + header)
