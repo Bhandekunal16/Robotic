@@ -8,54 +8,54 @@ class service:
     def __init__(self):
         pass
 
-    def write(name):
+    def write(path: str):
         file.write(
-            name, "w", "//Hello, world!\n//This is a new file created using Python."
+            path, "w", "//Hello, world!\n//This is a new file created using Python."
         )
 
-    def touch(name):
-        command = name.split()
+    def touch(path: str):
+        command = path.split()
         file.write(
             command[1],
             "w",
             "//Hello, world!\n//This is a new file created using Python.",
         )
 
-    def read(name):
-        file.read(name, "r")
+    def read(path : str):
+        file.read(path, "r")
 
-    def cat(name):
-        command = name.split()
+    def cat(path : str):
+        command = path.split()
         file.read(command[1], "r")
 
-    def lineRead(name):
-        with open(name, "r") as file:
+    def lineRead(path : str):
+        with open(path, "r") as file:
             for line in file:
                 print(line.strip())
 
-    def edit(name, Content):
-        file.write(name, "a", Content)
+    def edit(path, Content):
+        file.write(path, "a", Content)
 
-    def mkdir(name):
-        os.makedirs(name, exist_ok=True)
-        if os.path.exists(name):
+    def mkdir(path):
+        os.makedirs(path, exist_ok=True)
+        if os.path.exists(path):
             print("Folder created successfully.")
         else:
             print("Failed to create folder.")
 
-    def remove(name):
+    def remove(path):
         try:
-            os.remove(name)
+            os.remove(path)
             print(Color.GREEN + "File removed successfully.")
         except OSError as e:
-            print(f"Error: {name} : {e.strerror}")
+            print(f"Error: {path} : {e.strerror}")
 
-    def rmdir(name):
+    def rmdir(path):
         try:
-            os.rmdir(name)
+            os.rmdir(path)
             print(Color.GREEN + "Folder removed successfully.")
         except OSError as e:
-            print(f"Error: {name} : {e.strerror}")
+            print(f"Error: {path} : {e.strerror}")
 
     def long_running_task():
         for i in range(10):
