@@ -5,3 +5,4 @@ class string :
     enterData: str = "enter your data :"
     enterLengthForString: str ="enter length for string :"
     suggestion : str = "suggested type (str, int, float)"
+    qus1: str = "what process you want?"

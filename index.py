@@ -96,8 +96,8 @@ class module:
                 newTask = input(string.enterFileName)
                 service.binaryRepresentation(newTask)
             case "hex-decimal":
-                print("what process you want?")
-                newTask = input("enter type of input data:")
+                print(string.qus1)
+                newTask = input(string.enterData)
                 if newTask == "encode":
                     newTask2 = input(string.enterData)
                     service.hex(newTask2)
