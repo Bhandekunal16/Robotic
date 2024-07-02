@@ -68,14 +68,14 @@ class module:
             case "restart":
                 service.restart()
             case "search":
-                newTask: str = input(string.enterFileName)
+                name: str = input(string.enterFileName)
                 folder: str = os.getcwd()
-                service.search(folder, newTask)
+                service.search(folder, name)
             case "process":
                 service.process()
             case "random":
-                newTask: int = int(input(string.enterLengthForString))
-                service.random(newTask)
+                length: int = int(input(string.enterLengthForString))
+                service.random(length)
             case "binary":
                 print(string.suggestion)
                 newTask = input(string.enterData)
