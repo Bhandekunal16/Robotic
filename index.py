@@ -22,7 +22,7 @@ class module:
                 service.lineRead(newTask)
             case "edit":
                 newTask: str = input(string.enterFileName)
-                content: str = input("enter content :")
+                content: str = input(string.enterContent)
                 service.edit(newTask, content)
             case "simulate":
                 service.long_running_task()
