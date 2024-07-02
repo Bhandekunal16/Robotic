@@ -23,3 +23,5 @@ class string:
     CPUUsage: str = "CPU Usage:"
     TotalMemory:str = "Total Memory :"
     AvailableMemory: str = 'Available Memory :'
+    UsedMemory: str = 'Used Memory :'
+    FreeMemory: str = 'Free Memory :'
