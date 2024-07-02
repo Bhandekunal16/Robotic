@@ -63,9 +63,9 @@ class module:
                 service.permission()
             case "python --v":
                 service.version()
-            case "task":
-                newTask: str = input("enter the task :")
-                service.versions(newTask)
+            # case "task":
+            #     newTask: str = input("enter the task :")
+            #     service.versions(newTask)
             case "heavyTask":
                 newTask: str = input("enter the task :")
                 service.generate(newTask)
@@ -169,6 +169,10 @@ def tasks():
             elif "chmod" in task :
                 command = task.split()
                 service.chmod(command[1])
+            elif "task" in task :
+                command = task.split()
+                print(command)
+                # service.chmod(command[1])
             else:
                 result = module.application(task)
                 if result == "exit":
