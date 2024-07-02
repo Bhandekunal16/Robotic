@@ -9,18 +9,18 @@ class module:
     def application(task):
         match task:
             case "write":
-                newTask: str = input(string.enterFileName)
-                service.write(newTask)
+                name: str = input(string.enterFileName)
+                service.write(name)
             case "read":
-                newTask: str = input(string.enterFileName)
-                service.read(newTask)
+                name: str = input(string.enterFileName)
+                service.read(name)
             case "readline":
-                newTask: str = input(string.enterFileName)
-                service.lineRead(newTask)
+                name: str = input(string.enterFileName)
+                service.lineRead(name)
             case "edit":
-                newTask: str = input(string.enterFileName)
+                name: str = input(string.enterFileName)
                 content: str = input(string.enterContent)
-                service.edit(newTask, content)
+                service.edit(name, content)
             case "simulate":
                 service.long_running_task()
             case "memory":
