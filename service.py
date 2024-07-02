@@ -9,9 +9,8 @@ class service:
         pass
 
     def write(name):
-        # with open(name, "w") as file:
         file.write(
-            name, "w", "//Hello, world!\n //This is a new file created using Python."
+            name, "w", "//Hello, world!\n//This is a new file created using Python."
         )
 
     def touch(name):
