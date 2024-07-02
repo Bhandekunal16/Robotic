@@ -143,31 +143,31 @@ def tasks():
                 service.touch(task)
             elif "nano" in task:
                 service.nano(task)
-            elif "ping" in task :
+            elif "ping" in task:
                 service.ping(task)
-            elif "node" in task :
-                command = task.split()
+            elif "node" in task:
+                command: str = task.split()
                 service.node(command[1])
-            elif "mkdir" in task :
-                command = task.split()
+            elif "mkdir" in task:
+                command: str = task.split()
                 service.mkdir(command[1])
-            elif "remove" in task :
-                command = task.split()
+            elif "remove" in task:
+                command: str = task.split()
                 service.remove(command[1])
-            elif "rmdir" in task :
-                command = task.split()
+            elif "rmdir" in task:
+                command: str = task.split()
                 service.rmdir(command[1])
-            elif "rename" in task :
-                command = task.split()
+            elif "rename" in task:
+                command: str = task.split()
                 service.rename(command[1], command[3])
             elif "copy" in task:
-                command = task.split()
+                command: str = task.split()
                 service.copy(command[1], command[3])
-            elif "chmod" in task :
-                command = task.split()
+            elif "chmod" in task:
+                command: str = task.split()
                 service.chmod(command[1])
-            elif "run" in task :
-                command = task.split()
+            elif "run" in task:
+                command: str = task.split()
                 service.versions(command[1], command[2])
             else:
                 result = module.application(task)
