@@ -79,9 +79,6 @@ class module:
                 service.user()
             case "clear":
                 service.clear()
-            case "node c":
-                newTask: str = input("enter file name :")
-                service.node(newTask)
             case "permission":
                 service.permission()
             case "python --v":
@@ -171,6 +168,9 @@ def tasks():
                 service.nano(task)
             elif "ping" in task :
                 service.ping(task)
+            elif "node" in task :
+                command = task.split()
+                service.node(command[1])
             else:
                 result = module.application(task)
                 if result == "exit":
