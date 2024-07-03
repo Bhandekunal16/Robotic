@@ -1,5 +1,6 @@
 from service import service
 import base64, hashlib, re
+from Global import string
 
 
 class algorithm:
@@ -8,9 +9,9 @@ class algorithm:
             tail: str = service.hex(publicKey)
             head: str = service.hex(privateKey)
             if tail == "":
-                raise KeyError("key not found")
+                raise KeyError(string.keyNotFound)
             elif data == "":
-                raise KeyError("data not found")
+                raise KeyError(string.dataNotFound)
             else:
                 body: str = base64.b64encode(str(data).encode()).decode()
                 combined_string: str = tail
@@ -19,7 +20,7 @@ class algorithm:
                 ).hexdigest()
                 return head + body + hashed_string
         except OSError as e:
-            print(f"Error: {e.strerror}")
+            print(f"{string.Error} {e.strerror}")
 
     def decrypt(publicKey: str, privateKey: str, data):
         try:
@@ -29,9 +30,9 @@ class algorithm:
             data
 
             if tail == "":
-                raise KeyError("key not found")
+                raise KeyError(string.keyNotFound)
             elif data == "":
-                raise KeyError("data not found")
+                raise KeyError(string.dataNotFound)
             else:
                 modified_string: str = re.escape(head)
                 nextModified_string: str = re.escape(hashed_string)
@@ -42,10 +43,10 @@ class algorithm:
                 check: str = newString.replace(nextNewString, "")
 
                 if check != hashed_string:
-                    print("Key not matched")
+                    print(string.keyNotFound)
                 else:
                     decoded_data = base64.b64decode(nextNewString.encode()).decode()
                 return decoded_data
 
         except OSError as e:
-            print(f"Error: {e.strerror}")
+            print(f"{string.Error} {e.strerror}")

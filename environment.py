@@ -1,2 +1,2 @@
 class environment:
-    privateKey : str = "robotic"
+    privateKey: str = "robotic"

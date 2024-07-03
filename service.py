@@ -1,61 +1,60 @@
 import os, time, psutil, shutil, subprocess, sys, struct, tempfile
 from color import Color
 from response import Response
+from file import file
+from Global import string, permission
 
 
 class service:
     def __init__(self):
         pass
 
-    def write(name):
-        with open(name, "w") as file:
-            file.write("//Hello, world!\n")
-            file.write("//This is a new file created using Python.")
+    def write(path: str):
+        file.write(path, permission.write, string.initialFileContent)
 
-    def touch(name):
-        command = name.split()
-        with open(command[1], "w") as file:
-            file.write("//Hello, world!\n")
-            file.write("//This is a new file created using Python.")
+    def touch(path: str):
+        command = path.split()
+        file.write(
+            command[1],
+            permission.write,
+            string.initialFileContent,
+        )
 
-    def read(name):
-        with open(name, "r") as file:
-            return Response.custom(file.read())
+    def read(path: str):
+        file.read(path, permission.read)
 
-    def cat(name):
-        command = name.split()
-        with open(command[1], "r") as file:
-            return Response.custom(file.read())
+    def cat(path: str):
+        command = path.split()
+        file.read(command[1], permission.read)
 
-    def lineRead(name):
-        with open(name, "r") as file:
+    def lineRead(path: str):
+        with open(path, permission.read) as file:
             for line in file:
                 print(line.strip())
 
-    def edit(name, Content):
-        with open(name, "a") as file:
-            file.write(Content)
+    def edit(path: str, content):
+        file.write(path, permission.append, content)
 
-    def mkdir(name):
-        os.makedirs(name, exist_ok=True)
-        if os.path.exists(name):
-            print("Folder created successfully.")
+    def mkdir(path: str):
+        os.makedirs(path, exist_ok=True)
+        if os.path.exists(path):
+            print(string.folderCreatedSuccessfully)
         else:
-            print("Failed to create folder.")
+            print(string.failToCreate)
 
-    def remove(name):
+    def remove(path: str):
         try:
-            os.remove(name)
-            print(Color.GREEN + "File removed successfully.")
+            os.remove(path)
+            print(Color.GREEN + string.removeFolder)
         except OSError as e:
-            print(f"Error: {name} : {e.strerror}")
+            print(Color.RED + f"{string.Error} : {path} : {e.strerror}")
 
-    def rmdir(name):
+    def rmdir(path: str):
         try:
-            os.rmdir(name)
-            print(Color.GREEN + "Folder removed successfully.")
+            os.rmdir(path)
+            print(Color.GREEN + string.removeFolder)
         except OSError as e:
-            print(f"Error: {name} : {e.strerror}")
+            print(Color.RED + f"{string.Error} : {path} : {e.strerror}")
 
     def long_running_task():
         for i in range(10):
@@ -65,11 +64,11 @@ class service:
     def memory():
         mem = psutil.virtual_memory()
         print(
-            f"Total Memory: {mem.total} bytes\n Available Memory: {mem.available} bytes\n Used Memory: {mem.used} bytes\n Free Memory: {mem.free} bytes\n"
+            f"{string.TotalMemory} {mem.total} {string.bytes}\n {string.AvailableMemory} {mem.available} {string.bytes}\n {string.UsedMemory} {mem.used} {string.bytes}\n {string.FreeMemory} {mem.free} {string.bytes}\n"
         )
 
     def cpu():
-        print(f"CPU Usage: {psutil.cpu_percent()}%")
+        print(f"{string.CPUUsage} {psutil.cpu_percent()}%")
 
     def copy(source, destination):
         shutil.copy(source, destination)
@@ -82,28 +81,34 @@ class service:
 
     def list(self, name, indent=""):
         items = os.listdir(name)
+        print(Color.RESET + "total item :" + str(len(items)))
         for item in sorted(items):
+            print(Color.YELLOW + "-" * 100 + Color.RESET)
             full_path = os.path.join(name, item)
             if os.path.isdir(full_path):
-                print(Color.GREEN + f"{indent} +--{item}/")
+                print(Color.RESET + f"{indent}folder     : {item}/")
                 nextItems = os.listdir(item)
-                print("-" * 80)
+                print(Color.RESET + "total item :" + str(len(nextItems)))
+                print("-" * 47 + "folder" + "-" * 48)
+                if len(nextItems) == 0:
+                    print(" " * 45 + "Empty folder" + " " * 45)
                 for Item in sorted(nextItems):
                     new_full_path = os.path.join(name, Item)
                     if os.path.isdir(new_full_path):
                         print(f"{indent}+--{new_full_path}/{Item}")
                     else:
-                        print(Color.YELLOW + f"{indent}      +++/{Item}")
+                        print("." + Color.YELLOW + f"{indent}     ./{Item}" + Color.RESET)
+                print("-" * 48 + " END " + "-" * 48)
             else:
-                print(f"{indent}++- {item}")
+                print(f"{indent} {item}")
 
     def temperature():
         temperatures = psutil.sensors_temperatures()
         if temperatures:
-            print("CPU Temperatures:")
+            print(string.CPUTemperatures)
         for name, entries in temperatures.items():
             for entry in entries:
-                print(f"{name}: {entry.current}°C")
+                print(f"{name}: {entry.current} {string.C}")
 
     def bootTime():
         Response.custom(psutil.boot_time())
@@ -134,7 +139,11 @@ class service:
 
     def user():
         data = psutil.users()
-        obj = {"name": data[0].name, "host": data[0].host, "terminal": data[0].terminal}
+        obj = {
+            string.name: data[0].name,
+            string.host: data[0].host,
+            string.terminal: data[0].terminal,
+        }
         Response.custom(obj)
 
     def clear():
@@ -149,7 +158,7 @@ class service:
         per = os.stat(path)
         code = str(per.st_mode)
         if code.find("689"):
-            print("permission found : read,write")
+            print(string.permissionFound)
         print(per.st_mode)
 
     def version():
@@ -166,9 +175,8 @@ class service:
         )
         print(data.stdout)
 
-    def versions(name):
-        command = name.split()
-        data = subprocess.run([command[0], command[1]], capture_output=True, text=True)
+    def versions(part1, part2):
+        data = subprocess.run([part1, part2], capture_output=True, text=True)
         print(data.stdout)
 
     def ping(name):
@@ -182,9 +190,9 @@ class service:
         try:
             command = name.split()
             os.chdir(command[1])
-            print(Color.GREEN + "Current working directory changed to:", os.getcwd())
+            print(Color.GREEN + string.currentDirectory, os.getcwd())
         except OSError as e:
-            print(f"Error: {e.strerror}")
+            print(f"{string.Error} {e.strerror}")
 
     def shutdown():
         os.system("shutdown -h now")
@@ -199,11 +207,11 @@ class service:
                 if file == filename:
                     found_files.append(os.path.join(root, file))
         if found_files:
-            print("Found files at this location:")
+            print(string.fileFound)
             for file_path in found_files:
                 print(file_path)
         else:
-            print("No files found with the specified name and extension.")
+            print(string.fileNotFound)
 
     def process():
         print(os.getpid())
@@ -218,19 +226,19 @@ class service:
             return binary_str
         elif type(data) == int:
             binary_str = bin(data)
-            print("Binary representation of", data, "is:", binary_str)
+            print(string.BinaryRepresentationOf, data, string.Is, binary_str)
             return binary_str
         elif type(data) == float:
             packed = struct.pack("!d", data)
             binary_str = "".join(f"{x:08b}" for x in packed)
-            print("Binary representation of", data, "is:", binary_str)
+            print(string.BinaryRepresentationOf, data, string.Is, binary_str)
             return binary_str
 
     def binaryRepresentation(name):
-        with open(name, "rb") as file:
-            binary_data = file.read()
+        with open(name, permission.representBinary) as File:
+            binary_data = File.read()
             binary_str = "".join(f"{byte:08b}" for byte in binary_data)
-            print("Binary representation of file", name, "is:", binary_str)
+            file.write(f"./bin/{name}.bin", permission.write, binary_str)
             return binary_data
 
     def hex(data):
@@ -243,15 +251,13 @@ class service:
 
     def nano(path):
         command = path.split()
-        with open(command[1], 'r') as file:
+        with open(command[1], permission.read) as file:
             content = file.read()
-        with tempfile.NamedTemporaryFile(mode='w+t', delete=False) as temp_file:
+        with tempfile.NamedTemporaryFile(mode="w+t", delete=False) as temp_file:
             temp_file.write(content)
             temp_file_name = temp_file.name
-            subprocess.call(['nano', temp_file_name])
-            edit = input(content)       
-        with open(temp_file_name, 'r') as temp_file:
+            subprocess.call(["nano", temp_file_name])
+        with open(temp_file_name, permission.read) as temp_file:
             edited_content = temp_file.read()
-        with open(path, 'w') as original_file:
+        with open(path, permission.write) as original_file:
             original_file.write(edited_content)
-            
