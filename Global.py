@@ -34,3 +34,4 @@ class string:
     name : str = "name"
     host: str = "host"
     terminal : str = "terminal"
+    Is : str = "is :"
