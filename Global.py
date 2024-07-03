@@ -31,13 +31,13 @@ class string:
     Error: str = "Error"
     keyNotFound: str = "key not found"
     dataNotFound: str = "data not found"
-    name : str = "name"
+    name: str = "name"
     host: str = "host"
-    terminal : str = "terminal"
-    Is : str = "is :"
+    terminal: str = "terminal"
+    Is: str = "is :"
 
 
-class permission :
-    read : str = 'r'
-    write: str = 'w'
-    append:str = 'a'
+class permission:
+    read: str = "r"
+    write: str = "w"
+    append: str = "a"
