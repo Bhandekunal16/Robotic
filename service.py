@@ -192,7 +192,7 @@ class service:
             os.chdir(command[1])
             print(Color.GREEN + string.currentDirectory, os.getcwd())
         except OSError as e:
-            print(f"Error: {e.strerror}")
+            print(f"{string.Error} {e.strerror}")
 
     def shutdown():
         os.system("shutdown -h now")
