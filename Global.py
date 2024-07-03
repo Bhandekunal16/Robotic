@@ -35,3 +35,9 @@ class string:
     host: str = "host"
     terminal : str = "terminal"
     Is : str = "is :"
+
+
+class permission :
+    read : str = 'r'
+    write: str = 'w'
+    append:str = 'a'

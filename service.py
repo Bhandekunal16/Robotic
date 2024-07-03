@@ -2,7 +2,7 @@ import os, time, psutil, shutil, subprocess, sys, struct, tempfile
 from color import Color
 from response import Response
 from file import file
-from Global import string
+from Global import string, permission
 
 
 class service:
@@ -10,30 +10,30 @@ class service:
         pass
 
     def write(path: str):
-        file.write(path, "w", string.initialFileContent)
+        file.write(path, permission.write, string.initialFileContent)
 
     def touch(path: str):
         command = path.split()
         file.write(
             command[1],
-            "w",
+            permission.write,
             string.initialFileContent,
         )
 
     def read(path: str):
-        file.read(path, "r")
+        file.read(path, permission.read)
 
     def cat(path: str):
         command = path.split()
-        file.read(command[1], "r")
+        file.read(command[1], permission.read)
 
     def lineRead(path: str):
-        with open(path, "r") as file:
+        with open(path, permission.read) as file:
             for line in file:
                 print(line.strip())
 
     def edit(path: str, content):
-        file.write(path, "a", content)
+        file.write(path, permission.append, content)
 
     def mkdir(path: str):
         os.makedirs(path, exist_ok=True)
@@ -238,7 +238,7 @@ class service:
         with open(name, "rb") as File:
             binary_data = File.read()
             binary_str = "".join(f"{byte:08b}" for byte in binary_data)
-            file.write(f"./bin/{name}.bin", "w", binary_str)
+            file.write(f"./bin/{name}.bin", permission.write, binary_str)
             return binary_data
 
     def hex(data):
@@ -251,13 +251,13 @@ class service:
 
     def nano(path):
         command = path.split()
-        with open(command[1], "r") as file:
+        with open(command[1], permission.read) as file:
             content = file.read()
         with tempfile.NamedTemporaryFile(mode="w+t", delete=False) as temp_file:
             temp_file.write(content)
             temp_file_name = temp_file.name
             subprocess.call(["nano", temp_file_name])
-        with open(temp_file_name, "r") as temp_file:
+        with open(temp_file_name, permission.read) as temp_file:
             edited_content = temp_file.read()
-        with open(path, "w") as original_file:
+        with open(path, permission.write) as original_file:
             original_file.write(edited_content)
