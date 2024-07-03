@@ -41,3 +41,4 @@ class permission:
     read: str = "r"
     write: str = "w"
     append: str = "a"
+    representBinary : str = 'rb'

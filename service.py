@@ -235,7 +235,7 @@ class service:
             return binary_str
 
     def binaryRepresentation(name):
-        with open(name, "rb") as File:
+        with open(name, permission.representBinary) as File:
             binary_data = File.read()
             binary_str = "".join(f"{byte:08b}" for byte in binary_data)
             file.write(f"./bin/{name}.bin", permission.write, binary_str)
