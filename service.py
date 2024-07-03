@@ -139,7 +139,7 @@ class service:
 
     def user():
         data = psutil.users()
-        obj = {"name": data[0].name, "host": data[0].host, "terminal": data[0].terminal}
+        obj = {string.name: data[0].name, string.host : data[0].host, string.terminal : data[0].terminal}
         Response.custom(obj)
 
     def clear():

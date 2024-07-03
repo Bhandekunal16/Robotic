@@ -31,3 +31,6 @@ class string:
     Error: str = "Error"
     keyNotFound: str = "key not found"
     dataNotFound: str = "data not found"
+    name : str = "name"
+    host: str = "host"
+    terminal : str = "terminal"
