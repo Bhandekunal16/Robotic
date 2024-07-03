@@ -253,7 +253,6 @@ class service:
             temp_file.write(content)
             temp_file_name = temp_file.name
             subprocess.call(["nano", temp_file_name])
-            edit = input(content)
         with open(temp_file_name, "r") as temp_file:
             edited_content = temp_file.read()
         with open(path, "w") as original_file:
