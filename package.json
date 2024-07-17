@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "robotic-creater": "^1.0.0",
     "robotic.file.converter": "^1.1.0"
   }
 }
