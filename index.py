@@ -166,6 +166,9 @@ def tasks():
             elif "run" in task:
                 command: str = task.split()
                 service.versions(command[1], command[2])
+            elif 'format' in task :
+                command: str = task.split()
+                service.format(command[1])
             else:
                 result = module.application(task)
                 if result == "exit":

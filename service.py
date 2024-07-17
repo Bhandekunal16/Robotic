@@ -261,3 +261,8 @@ class service:
             edited_content = temp_file.read()
         with open(path, permission.write) as original_file:
             original_file.write(edited_content)
+            
+    def format(path):
+        result = subprocess.run(['node', 'formator.js', path], capture_output=True, text=True)
+        print(result.stdout)
+        print(result.stderr)    
