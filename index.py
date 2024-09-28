@@ -116,22 +116,26 @@ class module:
             case _:
                 print(Color.RED + f"Command {task} not found!")
 
-
 def tasks():
     try:
         while True:
             half = "*" * 69
             header = "*" * 149
-            print(Color.GREEN + header), print(Color.CYAN + string.welcome), print(
-                Color.GREEN + header
-            )
-            current_file_path = os.path.dirname(os.path.abspath(__file__))
-            os.environ["PATH"] += os.pathsep + current_file_path
+            print(Color.GREEN + header)
+            print(Color.CYAN + string.welcome)
+            print(Color.GREEN + header)
+
+            # Use current working directory (where the user is currently running the script from)
+            current_dir = os.getcwd()
+
             task = input(
                 Color.GREEN
-                + f"Welcome to the mystical castle of{Color.CYAN } {os.getcwd()}.{Color.GREEN }What would you like to explore today?:\n"
+                + f"Welcome to the mystical castle of {Color.CYAN} {current_dir}.{Color.GREEN} "
+                  "What would you like to explore today?:\n"
                 + Color.GREEN
             )
+
+            # Handle commands as per the user's input
             if "cd" in task:
                 service.cd(task)
             elif "cat" in task:
@@ -166,7 +170,7 @@ def tasks():
             elif "run" in task:
                 command: str = task.split()
                 service.versions(command[1], command[2])
-            elif 'format' in task :
+            elif 'format' in task:
                 command: str = task.split()
                 service.format(command[1])
             else:
@@ -174,9 +178,12 @@ def tasks():
                 if result == "exit":
                     print(Color.GREEN + half + string.thankYou + half)
                     break
+
     except OSError as e:
         print(Color.RED + f"Error: {e.strerror}")
         tasks()
+
+
 
 
 tasks()
